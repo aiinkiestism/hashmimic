@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/hashmimic",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
