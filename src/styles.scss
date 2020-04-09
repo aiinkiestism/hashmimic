@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// base
+// reset
+* {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    & {
+        -ms-overflow-style: none;
+    }
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// typography
+body { 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
+// abstracts
+// variables
+
+// mixins
+
+// functions
+

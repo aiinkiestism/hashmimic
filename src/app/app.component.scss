@@ -1,0 +1,40 @@
+header {
+    .sidenav-container {
+        background: transparent;
+    }
+    .sidenav-content {
+        .toolbar {
+            background: transparent;
+            button {
+                .header-logo {
+                    margin-left: 14%;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            a {
+                text-decoration: none;
+                h1 {
+                    color: rgba(0, 0, 0, 0.87);
+                    margin-left: 10%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) {
+
+}
+
+@media (max-width: 575.98px) {
+
+}

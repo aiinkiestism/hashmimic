@@ -1,17 +1,31 @@
-<style>
-
-</style>
-
 <header>
-  <h2>Hashmimic.eth.link</h2>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="mat-elevation-z16 sidenav">
+      <mat-nav-list></mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content" id="sidenav-content">
+      <mat-toolbar class="mat-elevation-z4 toolbar">
+        <button mat-icon-button [routerLink]="'/'">
+          <img src="assets/logo.svg" alt="header logo" class="header-logo">
+        </button>
+        <a [routerLink]="'/'"><h1>{{ title }}</h1></a>
+        <span fxFlex="1 1 auto"></span>
+        <a mat-button [routerLink]="'/'">
+          <span>Home</span>
+        </a>
+        <a mat-button [routerLink]="'#creations'">
+          <span>Creations</span>
+        </a>
+        
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </header>
 
 <main>
-
+<router-outlet></router-outlet>
 </main>
 
 <footer>
   
 </footer>
-
-<router-outlet></router-outlet>

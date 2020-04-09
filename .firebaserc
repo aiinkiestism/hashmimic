@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "hashmimic-4f222"
+  },
+  "targets": {
+    "hashmimic-4f222": {
+      "hosting": {
+        "hashmimic": [
+          "hashmimic-4f222"
+        ]
+      }
+    }
   }
 }
