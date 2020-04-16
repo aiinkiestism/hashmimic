@@ -1,0 +1,37 @@
+[debug] [2020-04-14T08:27:03.607Z] ----------------------------------------------------------------------
+[debug] [2020-04-14T08:27:03.610Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-04-14T08:27:03.610Z] CLI Version:   8.0.2
+[debug] [2020-04-14T08:27:03.610Z] Platform:      linux
+[debug] [2020-04-14T08:27:03.610Z] Node Version:  v12.14.0
+[debug] [2020-04-14T08:27:03.614Z] Time:          Tue Apr 14 2020 17:27:03 GMT+0900 (Japan Standard Time)
+[debug] [2020-04-14T08:27:03.614Z] ----------------------------------------------------------------------
+[debug] [2020-04-14T08:27:03.614Z] 
+[debug] [2020-04-14T08:27:03.626Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-14T08:27:03.627Z] > authorizing via signed-in user
+[debug] [2020-04-14T08:27:03.627Z] [iam] checking project hashmimic-4f222 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-14T08:27:03.628Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-14T08:27:03.629Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-14T08:27:04.478Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Apr 2020 08:27:04 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-14T08:27:04.489Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hashmimic-4f222:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-04-14T08:27:05.267Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2020-04-14T08:27:05.269Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hashmimic-4f222  
+ 
+[debug] [2020-04-14T08:27:05.274Z] Server Error. getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2020-04-14T08:27:05.282Z] FirebaseError: Server Error. getaddrinfo ENOTFOUND firebase.googleapis.com
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:31:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:877:8)
+    at ClientRequest.emit (events.js:215:7)
+    at ClientRequest.EventEmitter.emit (domain.js:475:20)
+    at TLSSocket.socketErrorListener (_http_client.js:406:9)
+    at TLSSocket.emit (events.js:210:5)
+    at TLSSocket.EventEmitter.emit (domain.js:475:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Failed to get Firebase project hashmimic-4f222. Please make sure the project exists and your account has permission to access it.

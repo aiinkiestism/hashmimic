@@ -34,13 +34,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CreationsComponent } from './creations/creations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     IntroComponent,
-    HomeCreationsComponent
+    HomeCreationsComponent,
+    CreationsComponent
   ],
   imports: [
     BrowserModule,
