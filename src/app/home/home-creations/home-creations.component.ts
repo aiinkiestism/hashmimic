@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ItemData } from '../../data/item-data';
 
 @Component({
   selector: 'app-home-creations',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-creations.component.scss']
 })
 export class HomeCreationsComponent implements OnInit {
+  @Input() data: ItemData;
 
   constructor() { }
 

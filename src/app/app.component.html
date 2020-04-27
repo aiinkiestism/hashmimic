@@ -6,7 +6,10 @@
     <mat-sidenav-content class="sidenav-content" id="sidenav-content">
       <mat-toolbar class="mat-elevation-z4 toolbar">
         <button mat-icon-button [routerLink]="'/'">
-          <img src="assets/logo.svg" alt="header logo" class="header-logo">
+          <!-- <img src="assets/logo.svg" alt="header logo" class="header-logo"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" version="1.1">
+            <image href="assets/logo.svg" x="0" y="0" width="40px" height="40px" />
+          </svg>
         </button>
         <a [routerLink]="'/'"><h1>{{ title }}</h1></a>
         <span fxFlex="1 1 auto"></span>

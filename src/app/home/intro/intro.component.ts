@@ -18,7 +18,7 @@ export class IntroComponent implements OnInit {
   // cube = new THREE.Mesh( this.geometry, this.material );
   
   constructor() {
-    
+
   }
   
   ngOnInit(): void {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hashmimic.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,28 +43,59 @@
     </script> -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BQXVT5PKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4BQXVT5PKQ');
+    </script>
+  <script async>
+    let greeting = [
+      ' __/\\\________/\\\_______________________________________________________________________________________________________/\\\________________________________________/\\\\\\\____',
+      '_\/\\\_______\/\\\______________________________________________________________________________________________________\/\\\_____________________________________/\\\//////\\\__',
+        '_\/\\\_______\/\\\______________________________________________/\\\__/\\\______________________________________________\/\\\_________________/\\\_______________\///_____\//\\\_',
+        '_\/\\\\\\\\\\\\\\\_____/\\\\\_____/\\____/\\___/\\_____________\//\\\/\\\______/\\\\\_____/\\\____/\\\__________________\/\\\______/\\\\\____\///___/\\/\\\\\\_____________/\\\__',
+          '_\/\\\/////////\\\___/\\\///\\\__\/\\\__/\\\\_/\\\______________\//\\\\\_____/\\\///\\\__\/\\\___\/\\\_____________/\\\\\\\\\____/\\\///\\\___/\\\_\/\\\////\\\_________/\\\\/___',
+          '_\/\\\_______\/\\\__/\\\__\//\\\_\//\\\/\\\\\/\\\________________\//\\\_____/\\\__\//\\\_\/\\\___\/\\\____________/\\\////\\\___/\\\__\//\\\_\/\\\_\/\\\__\//\\\_______/\\\/_____',
+            '_\/\\\_______\/\\\_\//\\\__/\\\___\//\\\\\/\\\\\______________/\\_/\\\_____\//\\\__/\\\__\/\\\___\/\\\___________\/\\\__\/\\\__\//\\\__/\\\__\/\\\_\/\\\___\/\\\______\///_______',
+            '_\/\\\_______\/\\\__\///\\\\\/_____\//\\\\//\\\______________\//\\\\/_______\///\\\\\/___\//\\\\\\\\\____________\//\\\\\\\/\\__\///\\\\\/___\/\\\_\/\\\___\/\\\_______/\\\______',
+              '_\///________\///_____\/////________\///__\///________________\////___________\/////______\/////////______________\///////\//_____\/////_____\///__\///____\///_______\///_______'
+    ];
+  </script>
 </head>
 <body>
   <app-root></app-root>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js" type="text/javascript"></script>
-  <script>
+  <script type="module">
+    // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
     (function(global) {
         window.onload = intro;
 
-        let introWidth = window.innerWidth;
-        let introHeight = window.innerHeight;
+        // I want to reset parameters with variables
+
+        // I want to instruct these by scss or in a more useful way, but what about camera's aspect
+        let introWidth = window.innerWidth,
+            introHeight = window.innerHeight,
+            rot = 0;
 
         function intro() {
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.1, 1000);
-            camera.position.set(0, 0, +300);
+            scene.background = new THREE.Color(0x000);
+            const camera = new THREE.PerspectiveCamera(30, introWidth/introHeight, 0.1, 1000);
+            camera.position.set(0, 60, 500);
+            // let controls = new THREE.OrbitControls(camera);
+            // controls.autoRotate = true;
 
             const renderer = new THREE.WebGLRenderer({
                 canvas: document.getElementById("intro-canvas")
             });
+            renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(introWidth, introHeight);
 
-            const geometry = new THREE.IcosahedronGeometry(30, 0);
+            const geometry = new THREE.IcosahedronGeometry(40, 0);
             const material = new THREE.MeshNormalMaterial();
             const icosahedron = new THREE.Mesh(geometry, material);
             scene.add(icosahedron);
@@ -81,18 +112,82 @@
             function animate() {
                 icosahedron.rotation.x += 0.01;
                 icosahedron.rotation.y = -0.25;
+                // contorls.update();
+
+                rot += 0.3;
+                const radian = (rot * Math.PI) / 180;
+                camera.position.x = 300 * Math.sin(radian);
+                camera.position.z = 800 * Math.cos(radian);
+                camera.position.y = 300 * Math.sin(radian);
+                camera.lookAt(new THREE.Vector3(0, 0, 0));
+
                 renderer.render(scene, camera);
                 requestAnimationFrame(animate);
             }
-        }
+
+            
+            // window.addEventListener("resize", function() {
+            //     introWidth = window.innerWidth;
+            //     introHeight = window.innerWidth;
+            //     // intro();
+            //     renderer.setPixelRatio(window.devicePielRatio);
+            //     renderer.setSize(width, height);
+            //     camera.aspect = width / height;
+            //     camera.updateProjectionMatrix();
+            // });
+
+          }
+
+          window.addEventListener("resize", function() {
+              introWidth = window.innerWidth;
+              introHeight = window.innerHeight;
+              intro();
+              renderer.setPixelRatio(window.devicePielRatio);
+              renderer.setSize(introWidth, introHeight);
+              camera.aspect = introWidth / introHeight;
+              camera.updateProjectionMatrix();
+          });
 
 
-        window.addEventListener("resize", function() {
-            introWidth = window.innerWidth;
-            introHeight = window.innerWidth;
-            intro();
-        });
     })(this);
+</script>
+<noscript>
+  <div id="ns-wrap">
+    <div id="ns-wrap-inner">
+      <h1 id="ns-h1">
+        <a href="https://hashmimic.com">
+          Hashmimic.com
+        </a>
+      </h1>
+      <h2 id="ns-h2">Javascript Disabled..</h2>
+      <p id="ns-p">This Website requires Javascript to work properly :(</p>
+    </div>
+  </div>
+</noscript>
+<script async>
+  let myDoge = [
+        '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░',
+        '░░░dogescript░░░░░░▄░░░░░░░░░░░░░░▄░░░░░yup░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░░░you░░░░░░░░░',
+        '░░░░░░░░░░░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░░░░░are░░░░░░░',
+        '░░░░░░░░░░░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░wasting░time░░',
+        '░░░░░░░░░░░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐░░░░░░░░░now░░░░',
+        '░░░░░░░░░░░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐░░░░░░░░░░░░░░░',
+        '░░woof░░░░▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌░░░░░░░░░░░░░░',
+        '░░░░░░░░░░▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░░░░yeah░░░░░░░',
+        '░░░░░░░░░░░▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░▀▄▒▒▒▒▒love▒▒░▒░▒░▒▄▒▒▒▒▌░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀░░░░░░░░░░░░░░░░░',
+        '░░woofwof░░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░░░░░░░░░░░░░░░',
+        '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░'
+  ];
 </script>
 </body>
 </html>
