@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "hashmimic",
-      "public": "dist/hashmimic",
+      "public": "dist/hashmimic/browser",
       "ignore": [
         "firebase.json",
         "**/.*",

@@ -35,6 +35,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CreationsComponent } from './creations/creations.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,7 @@ import { CreationsComponent } from './creations/creations.component';
     CreationsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -69,6 +72,8 @@ import { CreationsComponent } from './creations/creations.component';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    RouterModule,
     // AngularFireModule,
     // AngularFirestoreModule,
     // AngularFireFunctionsModule,
