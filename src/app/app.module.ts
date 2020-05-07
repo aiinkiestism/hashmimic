@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './home/intro/intro.component';
 import { HomeCreationsComponent } from './home/home-creations/home-creations.component';
+import { CreationsComponent } from './creations/creations.component';
+import { LoadingComponent } from './loading/loading.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -34,7 +37,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CreationsComponent } from './creations/creations.component';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
@@ -45,7 +48,11 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     IntroComponent,
     HomeCreationsComponent,
-    CreationsComponent
+    CreationsComponent,
+    LoadingComponent
+  ],
+  entryComponents: [
+    LoadingComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -62,6 +69,7 @@ import { RouterModule } from '@angular/router';
     MatListModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    OverlayModule,
     MatRippleModule,
     MatSelectModule,
     MatSidenavModule,

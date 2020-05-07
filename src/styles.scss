@@ -35,8 +35,8 @@ a {
 }
 
 // typography
-body { 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 
@@ -75,4 +75,20 @@ body {
             font-size: 22px;
         }
     }
+}
+
+// animations
+.fadeout {
+  animation: fadeOut .5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
