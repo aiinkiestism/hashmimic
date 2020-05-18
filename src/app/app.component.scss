@@ -1,5 +1,6 @@
 header {
-    background: #efeeea;
+    background: transparent;
+    padding: 5% 5% 0;
     .sidenav-container {
         background: transparent;
     }
@@ -19,6 +20,14 @@ header {
                     color: rgba(0, 0, 0, 0.87);
                     margin-left: 10%;
                 }
+                span {
+                  color: #fff;
+                  font-family: 'Dancing Script', cursive;
+                  font-size: 24px;
+                }
+            }
+            #home-gnav, #creations-gnav {
+              margin-right: 0.7%;
             }
         }
     }
@@ -37,5 +46,15 @@ header {
 }
 
 @media (max-width: 575.98px) {
-
+  header {
+    .sidenav-contentt {
+      .toolbar {
+        a {
+          span {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
 }

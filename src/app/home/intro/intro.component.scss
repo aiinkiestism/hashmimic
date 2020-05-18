@@ -1,6 +1,7 @@
 #intro-canvas {
     overflow: hidden;
     max-height: 1000px;
+    margin-top: -7.1%;
 }
 
 
@@ -17,5 +18,7 @@
 }
 
 @media (max-width: 575.98px) {
-    
+  #intro-canvas {
+    margin-top: -10.3%;
+  }
 }

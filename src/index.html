@@ -23,6 +23,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <!-- <link rel="manifest" href="assets/manifest.json"> -->
     <link rel="manifest" href="manifest.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -39,9 +42,9 @@
     <meta name="twitter:card" content=""/>
 
     <base href="/">
-    <!-- <script>
+    <script>
       document.write('<base href="'+window.location.pathname+'"/>');
-    </script> -->
+    </script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -71,7 +74,8 @@
     #loading-wrapper {
       width: 100%;
       height: 100vh;
-      background: #b2b2b2;
+      /* background: #b2b2b2; */
+      background: #000;
       position: relative;
     }
     #loading-wrapper img {
@@ -81,6 +85,9 @@
       bottom: 0;
       left: 0;
       margin: auto;
+    }
+    app-root {
+      background: #000;
     }
     @media (max-width: 850px) {
       #loading-wrapper img {
@@ -95,19 +102,47 @@
 </div>
 <app-root id="contents"></app-root>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js" type="text/javascript" defer></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.js" type="text/javascript" defer></script> -->
 <script type="module" defer>
     // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
     (function() {
         let contents = document.getElementById("contents");
         contents.setAttribute('style', "display: none;");
     });
-    (function(global) {
+    (function() {
+
+      // const scene = new THREE.Scene();
+      // const camera = new THREE.PerspectiveCamera(30, introWidth/introHeight, 0.1, 1000);
+      // let renderer = new THREE.WebGLRenderer({
+        //     canvas: document.getElementById("intro-canvas")
+        // });
 
         window.addEventListener("DOMContentLoaded", intro);
 
-        // I want to reset parameters with variables
+        window.addEventListener("DOMContentLoaded", () => {
+            let homeGnav = document.getElementById("home-gnav"),
+                logoGnav = document.getElementById("logo-gnav");
 
-        // I want to instruct these by scss or in a more useful way, but what about camera's aspect
+            homeGnav.addEventListener("mouseenter", () => {
+              let currentPathname = location.pathname;
+              if (currentPathname !== '/') {
+                homeGnav.addEventListener("click", () => {
+                  intro();
+                });
+              }
+            });
+
+            logoGnav.addEventListener("mouseenter", () => {
+              let currentPathname = location.pathname;
+              if (currentPathname !== '/') {
+                logoGnav.addEventListener("click", () => {
+                  intro();
+                });
+              }
+            });
+
+        });
+
         let introWidth = window.innerWidth,
             introHeight = window.innerHeight,
             rot = 0;
@@ -167,21 +202,23 @@
             //     camera.updateProjectionMatrix();
             // });
 
-            // loading.setAttribute("style", "display: none;");
+            if(window.matchMedia("screen and (min-width: 580px)").matches) {
+              window.addEventListener("resize", function() {
+                  introWidth = window.innerWidth;
+                  introHeight = window.innerHeight;
+                  renderer.setPixelRatio(window.devicePixelRatio);
+                  renderer.setSize(introWidth, introHeight);
+                  camera.aspect = introWidth / introHeight;
+                  camera.updateProjectionMatrix();
+              });
+            }
+
+
           }
 
-          window.addEventListener("resize", function() {
-              introWidth = window.innerWidth;
-              introHeight = window.innerHeight;
-              intro();
-              renderer.setPixelRatio(window.devicePixelRatio);
-              renderer.setSize(introWidth, introHeight);
-              camera.aspect = introWidth / introHeight;
-              camera.updateProjectionMatrix();
-          });
 
 
-    })(this);
+    })();
 </script>
 <script src="bundle.js" type="text/javascript" defer></script>
 <noscript>

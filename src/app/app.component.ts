@@ -11,6 +11,7 @@ import { Overlay } from '@angular/cdk/overlay';
 })
 export class AppComponent implements OnInit {
   title = 'Hashmimic.com';
+  // homeGnav = document.getElementById("home-gnav");
 
   // overlayRef = this.overlay.create({
   //   hasBackdrop: true,
@@ -29,11 +30,16 @@ export class AppComponent implements OnInit {
     //   this.overlayRef.detach();
     // }, 3000);
 
+    // this.homeGnav.addEventListener("click", () => {
+
+    // });
+
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         document.getElementById('sidenav-content')!.scrollTo(0, 0);
       }
     });
+
   }
 
 }
