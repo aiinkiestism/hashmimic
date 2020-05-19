@@ -7,6 +7,8 @@ header {
     .sidenav-content {
         .toolbar {
             background: transparent;
+            position: relative;
+            margin-bottom: 15%;
             // button {
             //     .header-logo {
             //         margin-left: 14%;
@@ -28,6 +30,23 @@ header {
             }
             #home-gnav, #creations-gnav {
               margin-right: 0.7%;
+            }
+            #me-toggle {
+              position: absolute;
+              top: 94%;
+              right: 1.3%;
+              // a {
+                .sn-link {
+                  opacity: 0;
+                  visibility: hidden;
+                  cursor: default;
+                  svg {
+                    image {
+
+                    }
+                  }
+                }
+              // }
             }
         }
     }

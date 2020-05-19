@@ -10,23 +10,47 @@
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content" id="sidenav-content">
       <mat-toolbar class="mat-elevation-z4 toolbar">
+
         <button mat-icon-button [routerLink]="'/'" id="logo-gnav">
           <!-- <img src="assets/logo.svg" alt="header logo" class="header-logo"> -->
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="60px">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="60px" version="1.1">
             <image href="assets/logo.svg" x="0" y="0" width="60px" height="60px" />
           </svg>
         </button>
         <!-- <a [routerLink]="'/'"><h1>{{ title }}</h1></a> -->
         <span fxFlex="1 1 auto"></span>
-        <a mat-button [routerLink]="'/'" id="home-gnav">
+        <!-- <a mat-button [routerLink]="'/'" id="home-gnav">
           <span>Home</span>
-        </a>
+        </a> -->
         <a mat-button [routerLink]="'/creations'" id="creations-gnav">
           <span>Creations</span>
         </a>
-        <a mat-button id="me-gnav">
+        <a mat-button id="me-gnav" (mouseenter)="onMe()" (mouseleave)="offMe()">
           <span>Me</span>
         </a>
+        <div id="me-toggle">
+          <a href="https://twitter.com/hashmimic" target="_blank" class="sn-link">
+            <div class="sn-link-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px">
+                <image href="assets/twitter.svg" x="0" y="0" width="48px" height="48px" />
+              </svg>
+            </div>
+          </a>
+          <!-- <a href="" target="_blank" class="sn-link">
+            <div class="sn-link-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px">
+                <image href="assets/spotify.svg" x="0" y="0" width="48px" height="48px" />
+              </svg>
+            </div>
+          </a>
+          <a href="" target="_blank" class="sn-link">
+            <div class="sn-link-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px">
+                <image href="assets/youtube.svg" x="0" y="0" width="48px" height="48px" />
+              </svg>
+            </div>
+          </a> -->
+        </div>
 
       </mat-toolbar>
     </mat-sidenav-content>

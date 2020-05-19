@@ -87,9 +87,41 @@ body {
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+.me-fadein {
+  animation: meFadeIn .5s;
+  animation-fill-mode: both;
+}
+
+@keyframes meFadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+@keyframes meFadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
   }
 }

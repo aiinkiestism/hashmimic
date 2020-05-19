@@ -120,17 +120,17 @@
         window.addEventListener("DOMContentLoaded", intro);
 
         window.addEventListener("DOMContentLoaded", () => {
-            let homeGnav = document.getElementById("home-gnav"),
-                logoGnav = document.getElementById("logo-gnav");
+            // let homeGnav = document.getElementById("home-gnav");
+            let logoGnav = document.getElementById("logo-gnav");
 
-            homeGnav.addEventListener("mouseenter", () => {
-              let currentPathname = location.pathname;
-              if (currentPathname !== '/') {
-                homeGnav.addEventListener("click", () => {
-                  intro();
-                });
-              }
-            });
+            // homeGnav.addEventListener("mouseenter", () => {
+            //   let currentPathname = location.pathname;
+            //   if (currentPathname !== '/') {
+            //     homeGnav.addEventListener("click", () => {
+            //       intro();
+            //     });
+            //   }
+            // });
 
             logoGnav.addEventListener("mouseenter", () => {
               let currentPathname = location.pathname;
