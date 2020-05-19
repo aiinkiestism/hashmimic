@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sp-me-toggle.component.scss']
 })
 export class SpMeToggleComponent implements OnInit {
-  hamBtn = document.getElementById("hamburger");
 
   constructor() { }
 
@@ -14,7 +13,10 @@ export class SpMeToggleComponent implements OnInit {
   }
 
   onSpMe(): void {
+    let hamBtn = document.getElementById("hamburger");
     let menuBg = document.getElementById("menu-bg");
+
+    hamBtn.classList.toggle('is-active');
     menuBg.classList.toggle('me-active');
   }
 
