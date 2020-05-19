@@ -113,15 +113,20 @@ body {
   }
 }
 
-@keyframes meFadeOut {
-  0% {
-    opacity: 1;
-    visibility: visible;
-    display: block;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-  }
-}
+// .me-fadeout {
+//   animation: meFadeIn .5s;
+//   animation-fill-mode: both;
+// }
+
+// @keyframes meFadeOut {
+//   0% {
+//     opacity: 1;
+//     visibility: visible;
+//     display: block;
+//   }
+//   100% {
+//     opacity: 0;
+//     visibility: hidden;
+//     display: none;
+//   }
+// }

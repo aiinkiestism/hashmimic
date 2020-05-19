@@ -66,11 +66,26 @@ header {
 
 @media (max-width: 575.98px) {
   header {
-    .sidenav-contentt {
+    .sidenav-content {
       .toolbar {
         a {
+          display: none;
           span {
             font-size: 20px;
+          }
+        }
+        #me-toggle {
+          display: none;
+          right: 3.8%;
+          .sn-link {
+            svg {
+              width: 30px;
+              height: 30px;
+              image {
+                width: 30px;
+                height: 30px;
+              }
+            }
           }
         }
       }

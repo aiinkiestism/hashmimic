@@ -41,6 +41,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
+import { SpMeToggleComponent } from './sp-me-toggle/sp-me-toggle.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { RouterModule } from '@angular/router';
     IntroComponent,
     HomeCreationsComponent,
     CreationsComponent,
-    LoadingComponent
+    LoadingComponent,
+    SpMeToggleComponent
   ],
   entryComponents: [
     LoadingComponent,
