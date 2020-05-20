@@ -16,8 +16,18 @@ header {
             //         height: 40px;
             //     }
             // }
+            #logo-gnav {
+              transition: all .5s;
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
             a {
                 text-decoration: none;
+                transition: all .7s;
+                &:hover {
+                  transform :skew(-0.06turn, 12deg);
+                }
                 h1 {
                     color: rgba(0, 0, 0, 0.87);
                     margin-left: 10%;
