@@ -69,8 +69,24 @@
   }
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1400px) {
+  #creations-wrap {
+    padding-bottom: 40%;
+  }
+}
 
+@media (max-width: 1199.98px) {
+  #creations-wrap {
+    padding: 0 15% 4%;
+    padding-top: 10%;
+    padding-bottom: 52%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #creations-wrap {
+
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -82,5 +98,30 @@
 }
 
 @media (max-width: 575.98px) {
-
+  #creations-wrap {
+    padding: 0 7% 4%;
+    padding-bottom: 52%;
+    padding-top: 10%;
+    .inner-wrap {
+      // justify-content: space-evenly;
+      %wrap-shared {
+        // width: 43%;
+        width: 45%;
+        .wrap-box {
+          .inner-wrap {
+            .bg-wrap {
+              width: 95%;
+              height: 91%;
+              background: url("./../../assets/sp-box-bg.svg") no-repeat;
+              background-position: center;
+              .inner-box {
+                width: 76%;
+                height: 66%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
