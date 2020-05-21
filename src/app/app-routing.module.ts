@@ -2,11 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CreationsComponent } from './creations/creations.component';
+import { BlogComponent } from './creations/blog/blog.component';
+import { MusicComponent } from './creations/music/music.component';
+import { SoftwareComponent } from './creations/software/software.component';
+import { BusinessComponent } from './creations/business/business.component';
+// import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'creations', component: CreationsComponent },
+  { path: 'creations/blog', component: BlogComponent },
+  { path: 'creations/music', component: MusicComponent },
+  { path: 'creations/software', component: SoftwareComponent },
+  { path: 'creations/business', component: BusinessComponent },
+  // { path: 'creations/calligraphy', component: CalligraphyComponent },
 ];
 
 @NgModule({

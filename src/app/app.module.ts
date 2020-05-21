@@ -42,6 +42,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { SpMeToggleComponent } from './sp-me-toggle/sp-me-toggle.component';
+import { BlogComponent } from './creations/blog/blog.component';
+import { MusicComponent } from './creations/music/music.component';
+import { SoftwareComponent } from './creations/software/software.component';
+import { BusinessComponent } from './creations/business/business.component';
+import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,12 @@ import { SpMeToggleComponent } from './sp-me-toggle/sp-me-toggle.component';
     HomeCreationsComponent,
     CreationsComponent,
     LoadingComponent,
-    SpMeToggleComponent
+    SpMeToggleComponent,
+    BlogComponent,
+    MusicComponent,
+    SoftwareComponent,
+    BusinessComponent,
+    CalligraphyComponent
   ],
   entryComponents: [
     LoadingComponent,

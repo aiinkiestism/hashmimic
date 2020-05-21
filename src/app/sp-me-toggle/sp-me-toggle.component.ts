@@ -15,7 +15,11 @@ export class SpMeToggleComponent implements OnInit {
   onSpMe(): void {
     let hamBtn = document.getElementById("hamburger");
     let menuBg = document.getElementById("menu-bg");
+    let header = document.getElementById("header");
+    let sidenavContent = document.getElementById("sidenav-content");
 
+    header.classList.toggle('on-menu');
+    sidenavContent.classList.toggle('on-menu');
     hamBtn.classList.toggle('is-active');
     menuBg.classList.toggle('me-active');
   }
