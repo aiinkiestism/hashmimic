@@ -20,11 +20,42 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    // cursor: none;
+    // position: relative;
 }
 
 html, body {
     height: 100%;
 }
+
+// #cursor, #stalker {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   cursor: none;
+//   pointer-events: none;
+//   border-radius: 50%;
+// }
+
+// #cursor {
+//   width: 18px;
+//   height: 18px;
+//   background: #fff;
+//   z-index: 9001;
+//   border: none;
+// }
+
+// #stalker {
+//   width: 60px;
+//   height: 60px;
+//   border: dotted #fff;
+//   background: transparent;
+//   z-index: 9000;
+//   transition: transform ease .7s;
+//   &.on-hover {
+//     transform: scale(2);
+//   }
+// }
 
 textarea:focus, input:focus {
     outline: none;
