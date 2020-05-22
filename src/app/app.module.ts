@@ -47,6 +47,7 @@ import { MusicComponent } from './creations/music/music.component';
 import { SoftwareComponent } from './creations/software/software.component';
 import { BusinessComponent } from './creations/business/business.component';
 import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
+import { TypedTitleComponent } from './home/typed-title/typed-title.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CalligraphyComponent } from './creations/calligraphy/calligraphy.compon
     MusicComponent,
     SoftwareComponent,
     BusinessComponent,
-    CalligraphyComponent
+    CalligraphyComponent,
+    TypedTitleComponent
   ],
   entryComponents: [
     LoadingComponent,

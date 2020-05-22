@@ -1,8 +1,8 @@
-app-typed-title {
-  position: absolute;
-  top: 26%;
-  left: 26%;
+#home-title {
+  position: relative;
   z-index: 8000;
+  font-size: 50px;
+  max-width: 1200px;
 }
 
 @media (max-width: 1199.98px) {
@@ -18,8 +18,8 @@ app-typed-title {
 }
 
 @media (max-width: 575.98px) {
-  app-typed-title {
-    top: 13%;
-    left: 17%;
+  #home-title {
+    font-size: 34px;
+    max-width: 305px;
   }
 }

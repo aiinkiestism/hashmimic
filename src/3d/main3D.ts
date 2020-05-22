@@ -1,5 +1,20 @@
 'use strict';
 import { gsap } from 'gsap';
+const TypeIt = require('typeit');
+
+window.addEventListener("DOMContentLoaded", () => {
+  let logoGnav = document.getElementById("logo-gnav");
+
+  logoGnav.addEventListener("mouseenter", () => {
+    let currentPathname = location.pathname;
+    if (currentPathname !== '/') {
+      logoGnav.addEventListener("click", () => {
+        typedTitle();
+      });
+    }
+  });
+
+});
 
 window.onload = ():void => {
 
@@ -63,4 +78,41 @@ window.onload = ():void => {
   //   stalker.classList.remove("on-hover");
   // });
 
+  typedTitle();
+
+}
+
+function typedTitle() {
+  let homeTitle = document.getElementById("home-title");
+  if (homeTitle.textContent === '') {
+    new TypeIt('#home-title', {
+      speed: 80,
+      deleteSpeed: 40,
+      startDelay: 900,
+      // waitUntilVisible: true,
+      loop: false,
+      cursor: true,
+      // afterStep: function(step, instance) {
+      //   instance.getElement().style.color = this.getRandomColor();
+      // }
+    })
+      .type("I'm a Multidisciplinary Blogger.", {delay: 1000})
+      .delete(26, {delay: 1800})
+      .type("Music Creator and Performer.", {delay: 1100})
+      .delete(28, {delay: 1800})
+      .type("Software Engineer.", {delay: 1100})
+      .delete(24, {delay: 1800})
+      .type("My Motivation in Life is to express what I create with time and effort, ", {delay: 1100})
+      .type("and be appreciated and moved by you.", {delay: 1100})
+      .go();
+  }
+
+}
+
+function getRandomColor() {
+  let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  for (let count = color.length; count < 6; count++) {
+    color = "0" + color;
+  }
+  return "#" + color;
 }
