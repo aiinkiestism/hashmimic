@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 
 
-
 export function intro() {
   let introWidth = window.innerWidth,
       introHeight = window.innerHeight,
@@ -16,7 +15,7 @@ export function intro() {
   // controls.autoRotate = true;
 
   const renderer = new THREE.WebGLRenderer({
-      canvas: document.getElementById("intro-canvas")
+      canvas: <HTMLCanvasElement>document.getElementById("intro-canvas")
   });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(introWidth, introHeight);

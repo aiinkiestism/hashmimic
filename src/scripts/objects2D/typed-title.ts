@@ -1,5 +1,6 @@
 const TypeIt = require('typeit');
 
+
 export function typedTitle() {
   let homeTitle = document.getElementById("home-title");
   if (homeTitle.textContent === '') {
