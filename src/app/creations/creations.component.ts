@@ -21,7 +21,7 @@ export class CreationsComponent implements OnInit {
 
     let mouseElements = [...e.currentTarget.querySelectorAll('*[data-mouse-parallax]')];
 
-    mouseElements.forEach((elem): any => {
+    mouseElements.forEach((elem: any): void => {
 
       let factor = elem.dataset.mouseParallax,
           xFinal = xMouse * factor,
