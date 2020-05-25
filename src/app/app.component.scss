@@ -63,7 +63,14 @@ header {
 }
 
 @media (max-width: 1199.98px) {
-
+  header {
+    .sidenav-container {
+      .mat-drawer-content {
+        overflow-y: visible;
+        height: 225px;
+      }
+    }
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -80,6 +87,11 @@ header {
     transition: all .5s;
     position: relative;
     z-index: 9000;
+    .sidenav-container {
+      .mat-drawer-content {
+        height: 100%;
+      }
+    }
     .sidenav-content {
       transition: all .5s;
       .toolbar {

@@ -20,7 +20,9 @@ export function typedTitle() {
       .type("Music Creator and Performer.", {delay: 1100})
       .delete(28, {delay: 1800})
       .type("Software Engineer.", {delay: 1100})
-      .delete(24, {delay: 1800})
+      .delete(18, {delay: 1800})
+      .type("Business Architect.", {delay: 1100})
+      .delete(25, {delay: 1800})
       .type("My Motivation in Life is to express what I create with time and effort, ", {delay: 1100})
       .type("and be appreciated and moved by you.", {delay: 1100})
       .go();
