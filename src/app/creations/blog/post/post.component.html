@@ -1,0 +1,16 @@
+<div *ngIf="post.fields">
+  <a href="{{ post.fields.url }}" target="_blank">
+    <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail">
+  </a>
+  <h2>
+    <a href="{{ post.fields.url }}" target="_blank">
+      {{ post.fields.title }}
+    </a>
+  </h2>
+  <p><i>{{ post.fields.publishedAt }}</i></p>
+  <br><br>
+  <div id="post-body" [innerHTML]="post.fields.body | mdToHtml">
+    <!-- {{ post.fields.body | mdToHtml }} -->
+  </div>
+  <button (click)="goToBlog()">Go Back to Lists</button>
+</div>

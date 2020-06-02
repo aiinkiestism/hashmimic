@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 // import { ComponentPortal } from '@angular/cdk/portal';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     // private overlay: Overlay
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     // this.overlayRef.attach(new ComponentPortal(MatProgressSpinnerModule));

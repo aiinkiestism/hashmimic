@@ -1,1 +1,17 @@
-<p>blog works!</p>
+<div *ngFor="let post of posts">
+  <div>
+    <div>
+      <a href="{{ post.fields.url }}" target="_blank">
+        <img src="{{ post.fields.image }}" alt="thumbnail" width="196">
+      </a>
+    </div>
+    <div>
+      <h5>
+        <a href="{{ post.fields.url }}" target="_blank">{{ post.fields.title }}</a>
+      </h5>
+      <p><i>{{ post.fields.publishedAt }}</i></p>
+      <p>{{ post.fields.description }}</p>
+    </div>
+  </div>
+  <button (click)="goToPost(post.sys.id)">Read</button>
+</div>

@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "watch": "webpack -w"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +15,7 @@
     "@angular/common": "~9.0.4",
     "@angular/compiler": "~9.0.4",
     "@angular/core": "~9.0.4",
+    "@angular/fire": "^6.0.0-rc.2",
     "@angular/forms": "~9.0.4",
     "@angular/material": "^9.2.0",
     "@angular/platform-browser": "~9.0.4",
@@ -23,6 +23,9 @@
     "@angular/platform-server": "~9.0.4",
     "@angular/router": "~9.0.4",
     "@angular/service-worker": "~9.0.4",
+    "contentful": "^7.14.4",
+    "firebase": "^7.14.6",
+    "marked": "^1.1.0",
     "rxjs": "~6.5.4",
     "three": "^0.115.0",
     "tslib": "^1.10.0",
@@ -62,6 +65,9 @@
     "tslint": "~5.15.0",
     "typeit": "^7.0.4",
     "typescript": "^3.7.5",
-    "ua-parser-js": "^0.7.21"
+    "ua-parser-js": "^0.7.21",
+    "firebase-admin": "^8.9.2",
+    "firebase-functions": "^3.3.0",
+    "firebase-functions-test": "^0.1.7"
   }
 }

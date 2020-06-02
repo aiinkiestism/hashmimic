@@ -13,10 +13,9 @@ import { LoadingComponent } from './loading/loading.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-// import { AngularFireModule } from '@angular/fire';
-// import { fbConfig } from ''
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -42,12 +41,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { SpMeToggleComponent } from './sp-me-toggle/sp-me-toggle.component';
-import { BlogComponent } from './creations/blog/blog.component';
 import { MusicComponent } from './creations/music/music.component';
 import { SoftwareComponent } from './creations/software/software.component';
 import { BusinessComponent } from './creations/business/business.component';
 import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 import { TypedTitleComponent } from './home/typed-title/typed-title.component';
+import { BlogComponent } from './creations/blog/blog.component';
+import { PostComponent } from './creations/blog/post/post.component';
+import { MdToHtmlPipe } from './md-to-html.pipe';
 
 @NgModule({
   declarations: [
@@ -58,12 +59,14 @@ import { TypedTitleComponent } from './home/typed-title/typed-title.component';
     CreationsComponent,
     LoadingComponent,
     SpMeToggleComponent,
-    BlogComponent,
     MusicComponent,
     SoftwareComponent,
     BusinessComponent,
     CalligraphyComponent,
-    TypedTitleComponent
+    TypedTitleComponent,
+    BlogComponent,
+    PostComponent,
+    MdToHtmlPipe,
   ],
   entryComponents: [
     LoadingComponent,
@@ -96,7 +99,7 @@ import { TypedTitleComponent } from './home/typed-title/typed-title.component';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
-    // AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
     // AngularFirestoreModule,
     // AngularFireFunctionsModule,
   ],
