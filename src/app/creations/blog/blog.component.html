@@ -1,14 +1,16 @@
 <div *ngFor="let post of posts">
   <div>
     <div>
-      <a href="{{ post.fields.url }}" target="_blank">
-        <img src="{{ post.fields.image }}" alt="thumbnail" width="196">
+      <a (click)="goToPost(post.sys.id)">
+        <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail" width="196">
       </a>
     </div>
     <div>
-      <h5>
-        <a href="{{ post.fields.url }}" target="_blank">{{ post.fields.title }}</a>
-      </h5>
+      <a (click)="goToPost(post.sys.id)">
+        <h5>
+          {{ post.fields.title }}
+        </h5>
+      </a>
       <p><i>{{ post.fields.publishedAt }}</i></p>
       <p>{{ post.fields.description }}</p>
     </div>

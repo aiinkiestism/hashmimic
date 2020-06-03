@@ -1,11 +1,9 @@
 <div *ngIf="post.fields">
-  <a href="{{ post.fields.url }}" target="_blank">
+  <div class="img-wrap">
     <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail">
-  </a>
+  </div>
   <h2>
-    <a href="{{ post.fields.url }}" target="_blank">
       {{ post.fields.title }}
-    </a>
   </h2>
   <p><i>{{ post.fields.publishedAt }}</i></p>
   <br><br>

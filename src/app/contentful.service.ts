@@ -17,14 +17,14 @@ export class ContentfulService {
 
   getPosts(query?: object): Promise<Entry<any>[]> {
     return this.client.getEntries(Object.assign({
-      content_type: 'Blog Post'
+      content_type: 'blogPost'
     }, query))
       .then(res => res.items);
   }
 
   getPost(postId): Promise<Entry<any>> {
     return this.client.getEntries(Object.assign({
-      content_type: 'Blog Post'
+      content_type: 'blogPost'
     }, {'sys.id': postId}))
       .then(res => res.items[0]);
   }
