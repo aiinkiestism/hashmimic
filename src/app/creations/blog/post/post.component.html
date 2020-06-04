@@ -2,10 +2,13 @@
   <div class="img-wrap">
     <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail">
   </div>
-  <h2>
-      {{ post.fields.title }}
-  </h2>
+  <h2>{{ post.fields.title }}</h2>
   <p><i>{{ post.fields.publishedAt }}</i></p>
+  <div *ngFor="let cateName of post.fields.category.fields.name">
+    <a>
+      <p>{{ post.fields.category.fields.name }}</p>
+    </a>
+  </div>
   <br><br>
   <div id="post-body" [innerHTML]="post.fields.body | mdToHtml">
     <!-- {{ post.fields.body | mdToHtml }} -->

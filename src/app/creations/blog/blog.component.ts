@@ -13,6 +13,7 @@ export let postSlug: any;
 export class BlogComponent implements OnInit {
 
   posts: Entry<any>[] = [];
+  categories: Entry<any>[] = [];
 
   constructor(
     private router: Router,
@@ -22,6 +23,9 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.contentfulService.getPosts()
       .then(posts => this.posts = posts);
+
+    this.contentfulService.getCategories()
+      .then(categories => this.categories = categories);
   }
 
   // goToPost(slug: any) {
@@ -30,6 +34,10 @@ export class BlogComponent implements OnInit {
 
   goToPost(postId) {
     this.router.navigate(['/creations/blog/post', postId]);
+  }
+
+  goToCategory(categoryId) {
+    this.router.navigate(['/creations/blog/category', categoryId]);
   }
 
 }

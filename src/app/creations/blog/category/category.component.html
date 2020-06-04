@@ -1,0 +1,27 @@
+<div *ngIf="category.fields">
+  <div *ngFor="let post of posts">
+    <div>
+      <div>
+        <a (click)="goToPost(post.fields.slug)">
+          <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail" width="196">
+        </a>
+      </div>
+      <p><i>{{ post.fields.publishedAt }}</i></p>
+      <div>
+        <a (click)="goToPost(post.fields.slug)">
+          <h5>{{ post.fields.title }}</h5>
+        </a>
+        <!-- <div *ngFor="let cateName of post.fields.category.fields.name"> -->
+        <div *ngFor="let category of categories">
+          <a (click)="goToCategory(category.fields.slug)">
+            <!-- <p>{{ cateName }}</p> -->
+            <!-- <p>{{ post.fields.category.fields.name }}</p> -->
+            <p>{{ category.fields.name }}</p>
+          </a>
+        <!-- </div> -->
+        <!-- <p>{{ post.fields.description }}</p> -->
+      </div>
+    </div>
+    <!-- <button (click)="goToPost(post.fields.slug)">Read</button> -->
+  </div>
+</div>

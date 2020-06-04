@@ -49,6 +49,7 @@ import { TypedTitleComponent } from './home/typed-title/typed-title.component';
 import { BlogComponent } from './creations/blog/blog.component';
 import { PostComponent } from './creations/blog/post/post.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
+import { CategoryComponent } from './creations/blog/category/category.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { MdToHtmlPipe } from './md-to-html.pipe';
     BlogComponent,
     PostComponent,
     MdToHtmlPipe,
+    CategoryComponent,
   ],
   entryComponents: [
     LoadingComponent,

@@ -25,7 +25,23 @@ export class ContentfulService {
   getPost(postId): Promise<Entry<any>> {
     return this.client.getEntries(Object.assign({
       content_type: 'blogPost'
-    }, {'sys.id': postId}))
+    }, {'fields.slug': postId}))
       .then(res => res.items[0]);
   }
+
+  getCategories(query?: object): Promise<Entry<any>[]> {
+    return this.client.getEntries(Object.assign({
+      content_type: 'category'
+    }, query))
+      .then(res => res.items);
+  }
+
+  getCategory(categoryId): Promise<Entry<any>> {
+    return this.client.getEntries(Object.assign({
+      content_type: 'category'
+    }, {'fields.slug': categoryId}))
+      .then(res => res.items[0]);
+  }
+
+
 }
