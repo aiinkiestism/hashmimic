@@ -14,6 +14,7 @@ export class BlogComponent implements OnInit {
 
   posts: Entry<any>[] = [];
   categories: Entry<any>[] = [];
+  publishedAt = document.getElementsByClassName("published-at");
 
   constructor(
     private router: Router,
@@ -38,6 +39,24 @@ export class BlogComponent implements OnInit {
 
   goToCategory(categoryId) {
     this.router.navigate(['/creations/blog/category', categoryId]);
+  }
+
+  showDates(e: any): void {
+    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+        this.publishedAt[i].classList.remove('fadeout');
+        this.publishedAt[i].classList.add('fadein');
+      }
+    }
+  }
+
+  hideDates(e: any): void {
+    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+        this.publishedAt[i].classList.remove('fadein');
+        this.publishedAt[i].classList.add('fadeout');
+      }
+    }
   }
 
 }

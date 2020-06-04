@@ -116,6 +116,22 @@ $base-font: 'Dancing Script', cursive, 'Nothing You Could Do', cursive, 'Arizoni
 }
 
 // animations
+.fadein {
+  animation: fadeIn .5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .fadeout {
   animation: fadeOut .5s;
   animation-fill-mode: both;

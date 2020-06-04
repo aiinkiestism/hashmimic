@@ -37,7 +37,7 @@ window.onload = ():void => {
   let loadingWrapper = document.getElementById("loading-wrapper"),
       contents = document.getElementById("contents");
 
-  contents.setAttribute('style', "display: block;");
+  contents.setAttribute('style', "display: block; height: 100vh; overflow-y: scroll;");
   loadingWrapper.classList.add('fadeout');
   setTimeout(():void => {
     loadingWrapper.setAttribute('style', "display: none;");
