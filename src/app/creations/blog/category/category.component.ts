@@ -1,26 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap, NavigationEnd, NavigationStart } from '@angular/router';
 import { ContentfulService } from '../../../contentful.service';
 import { Entry } from 'contentful';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnDestroy {
 
   catePosts: Entry<any>[] = [];
   categories: Entry<any>[] = [];
   category: Entry<any>;
   publishedAt = document.getElementsByClassName("published-at");
   pubCategoryId;
+  bgOuter = document.getElementsByClassName("bg-outer");
+  mySubscription: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private contentfulService: ContentfulService
-  ) { }
+    private contentfulService: ContentfulService,
+    public changeDetectorRef: ChangeDetectorRef
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+      return false;
+    };
+
+    this.mySubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.router.navigated = false;
+      }
+    })
+  }
 
   ngOnInit(): void {
     const categoryId = this.route.snapshot.paramMap.get('id');
@@ -28,7 +42,7 @@ export class CategoryComponent implements OnInit {
     this.contentfulService.getCategory(categoryId)
       .then((category) => {
         this.category = category;
-        console.log(category);
+        // console.log(category);
       });
 
     this.contentfulService.getCatePosts()
@@ -37,6 +51,18 @@ export class CategoryComponent implements OnInit {
     this.contentfulService.getCategories()
       .then(categories => this.categories = categories);
 
+    window.addEventListener("load", () => {
+      this.showCatePosts();
+    });
+
+    this.redraw();
+
+  }
+
+  ngOnDestroy(): void {
+    if (this.mySubscription) {
+      this.mySubscription.unsubscribe();
+    }
   }
 
   goToPost(postId) {
@@ -45,6 +71,7 @@ export class CategoryComponent implements OnInit {
 
   goToCategory(categoryId) {
     this.router.navigate(['/creations/blog/category', categoryId]);
+    this.showCatePosts();
   }
 
   showDates(e: any): void {
@@ -63,6 +90,25 @@ export class CategoryComponent implements OnInit {
         this.publishedAt[i].classList.add('fadeout');
       }
     }
+  }
+
+  showCatePosts(): void {
+    try {
+      for(let i = 0, max = this.bgOuter.length; i < max; i++) {
+        if(this.bgOuter[i].lastElementChild.lastElementChild === null) {
+          this.bgOuter[i].setAttribute('style', "display: none;");
+        } else {
+          continue;
+        }
+      }
+    } catch(e) {
+      console.log("This is not the category page.");
+    }
+  }
+
+  redraw(): void {
+    this.changeDetectorRef.detectChanges();
+    this.showCatePosts();
   }
 
 }

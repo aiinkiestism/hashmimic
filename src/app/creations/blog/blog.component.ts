@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { ContentfulService } from '../../contentful.service';
 import { Entry } from 'contentful';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog',

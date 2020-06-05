@@ -30,7 +30,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
-window.addEventListener("DOMContentLoaded", intro);
+try {
+  window.addEventListener("DOMContentLoaded", intro);
+} catch(e) {
+  console.log("This is not the top page.");
+}
 
 window.onload = ():void => {
 
@@ -45,7 +49,11 @@ window.onload = ():void => {
 
   // replacedCursor();
 
-  typedTitle();
+  try {
+    typedTitle();
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
 
 }
 
