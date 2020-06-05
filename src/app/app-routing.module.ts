@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'creations', component: CreationsComponent },
   { path: 'creations/blog', component: BlogComponent },
   { path: 'creations/blog/post/:id', component: PostComponent },
+  { path: 'creations/blog/category/all', redirectTo: '/creations/blog', pathMatch: 'full' },
   { path: 'creations/blog/category/:id', component: CategoryComponent },
   { path: 'creations/music', component: MusicComponent },
   { path: 'creations/software', component: SoftwareComponent },

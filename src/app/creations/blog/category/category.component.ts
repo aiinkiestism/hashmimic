@@ -10,9 +10,11 @@ import { Entry } from 'contentful';
 })
 export class CategoryComponent implements OnInit {
 
-  posts: Entry<any>[] = [];
+  catePosts: Entry<any>[] = [];
   categories: Entry<any>[] = [];
   category: Entry<any>;
+  publishedAt = document.getElementsByClassName("published-at");
+  pubCategoryId;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,17 +24,18 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     const categoryId = this.route.snapshot.paramMap.get('id');
+    this.pubCategoryId = categoryId;
     this.contentfulService.getCategory(categoryId)
       .then((category) => {
         this.category = category;
-        console.log(this.category);
+        console.log(category);
       });
 
-    this.contentfulService.getPosts()
-      .then(posts => this.posts = posts);
+    this.contentfulService.getCatePosts()
+      .then(catePosts => this.catePosts = catePosts);
 
     this.contentfulService.getCategories()
-    .then(categories => this.categories = categories);
+      .then(categories => this.categories = categories);
 
   }
 
@@ -42,6 +45,24 @@ export class CategoryComponent implements OnInit {
 
   goToCategory(categoryId) {
     this.router.navigate(['/creations/blog/category', categoryId]);
+  }
+
+  showDates(e: any): void {
+    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+        this.publishedAt[i].classList.remove('fadeout');
+        this.publishedAt[i].classList.add('fadein');
+      }
+    }
+  }
+
+  hideDates(e: any): void {
+    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+        this.publishedAt[i].classList.remove('fadein');
+        this.publishedAt[i].classList.add('fadeout');
+      }
+    }
   }
 
 }

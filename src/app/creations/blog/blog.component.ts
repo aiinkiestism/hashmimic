@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { ContentfulService } from '../../contentful.service';
 import { Entry } from 'contentful';
 
-export let postSlug: any;
-
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',

@@ -16,17 +16,13 @@
           <h3>{{ post.fields.title }}</h3>
         </a>
         <br>
-        <!-- <div *ngFor="let cateName of post.fields.category.fields.name"> -->
-        <div *ngFor="let category of categories" class="blog-post-categories">
+        <div *ngFor="let category of post.fields.category" class="blog-post-categories">
           <a (click)="goToCategory(category.fields.slug)">
-            <!-- <p>{{ cateName }}</p> -->
-            <!-- <p>{{ post.fields.category.fields.name }}</p> -->
             <p>{{ category.fields.name }}</p>
           </a>
-        <!-- </div> -->
+        </div>
         <!-- <p>{{ post.fields.description }}</p> -->
       </div>
     </div>
-    <!-- <button (click)="goToPost(post.fields.slug)">Read</button> -->
   </div>
 </div>

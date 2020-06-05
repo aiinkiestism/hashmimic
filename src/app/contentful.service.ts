@@ -43,5 +43,19 @@ export class ContentfulService {
       .then(res => res.items[0]);
   }
 
+  // getCatePosts(categoryId): Promise<Entry<any>[]> {
+  //   return this.client.getEntries(Object.assign({
+  //     content_type: 'blogPost'
+  //   }, {'fields.slug': categoryId}))
+  //     .then(res => res.items);
+  // }
+
+  getCatePosts(query?: object): Promise<Entry<any>[]> {
+    return this.client.getEntries(Object.assign({
+      content_type: 'blogPost'
+    }, query))
+      .then(res => res.items);
+  }
+
 
 }
