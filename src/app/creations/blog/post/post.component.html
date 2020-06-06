@@ -1,17 +1,38 @@
-<div *ngIf="post.fields">
-  <div class="img-wrap">
-    <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail">
+<div *ngIf="post.fields" id="post-wrap">
+  <div id="top-wrap">
+    <div class="bg-outer">
+      <div class="bg-inner">
+        <div class="img-wrap">
+          <img src="{{ post.fields.image.fields.file.url }}" alt="thumbnail">
+        </div>
+        <div class="bottom-wrap">
+          <h2 class="post-title">{{ post.fields.title }}</h2>
+          <p class="published-at"><i>published on {{ post.fields.publishedAt }}</i></p>
+          <div class="post-categories-wrap">
+            <div *ngFor="let category of post.fields.category" class="post-categories">
+              <a (click)="goToCategory(category.fields.slug)">
+                <p>{{ category.fields.name }}</p>
+              </a>
+            </div>
+          </div>
+          <div class="share-wrap">
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h2>{{ post.fields.title }}</h2>
-  <p><i>{{ post.fields.publishedAt }}</i></p>
-  <div *ngFor="let cateName of post.fields.category.fields.name">
-    <a>
-      <p>{{ post.fields.category.fields.name }}</p>
-    </a>
+  <div id="middle-wrap">
+    <div class="bg-outer">
+      <div id="post-body" [innerHTML]="post.fields.body | mdToHtml">
+        <!-- {{ post.fields.body | mdToHtml }} -->
+      </div>
+      <div class="share-wrap">
+
+      </div>
+    </div>
   </div>
-  <br><br>
-  <div id="post-body" [innerHTML]="post.fields.body | mdToHtml">
-    <!-- {{ post.fields.body | mdToHtml }} -->
+  <div id="bottom-wrap">
+
   </div>
-  <button (click)="goToBlog()">Go Back to Lists</button>
 </div>

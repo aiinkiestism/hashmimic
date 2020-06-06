@@ -1,0 +1,261 @@
+#post-wrap {
+  text-align: center;
+  margin: 0 20.5%;
+  margin-top: -7%;
+  #top-wrap {
+    margin: 0 4% 2.5%;
+    .bg-outer {
+      background: rgba(31,86,251,.2);
+      .bg-inner {
+        background: url("./../../../../assets/box-bg.svg") top no-repeat;
+        background-size: 72%;
+        .img-wrap {
+          padding: 24px 17.5% 0;
+          img {
+            height: 400px;
+          }
+        }
+        .bottom-wrap {
+          padding: 2% 18.5%;
+          text-align: left;
+          .post-title {
+            margin: 0;
+            font-weight: bold;
+            font-size: 30px;
+          }
+          .published-at {
+            margin: 0;
+            margin-top: 1%;
+            font-size: 16px;
+            i {
+
+            }
+          }
+          .post-categories-wrap {
+            .post-categories {
+              display: inline-block;
+              margin: 3% 0 0;
+              margin-right: 7px;
+              a {
+                cursor: pointer;
+                p {
+                  margin: 0;
+                  background: rgba(31,86,251,.4);
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  color: #fff;
+                }
+              }
+            }
+          }
+          .share-wrap {
+
+          }
+        }
+      }
+    }
+  }
+  #middle-wrap {
+    margin-bottom: 5%;
+    .bg-outer {
+      background: rgba(31,86,251,.2);
+      padding: 5% 10%;
+      #post-body {
+        font-size: 23px;
+        line-height: 32px;
+        letter-spacing: .1em;
+      }
+      .share-wrap {
+
+      }
+    }
+  }
+  #bottom-wrap {
+
+  }
+}
+
+@media (max-width: 1700px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 334px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1550px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 293px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1380px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 266px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 230px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+
+}
+
+@media (max-width: 1115px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 197px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 170px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 872px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 148px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #post-wrap {
+    margin: -7% 6.5% 0;
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 190px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+
+}
+
+@media (max-width: 650px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            img {
+              height: 162px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  #post-wrap {
+    #top-wrap {
+      .bg-outer {
+        .bg-inner {
+          .img-wrap {
+            padding-top: 5%;
+            img {
+              height: 96px;
+            }
+          }
+          .bottom-wrap {
+            .published-at {
+              font-size: 10px;
+            }
+          }
+          .post-categories-wrap {
+            margin-left: -2px;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
