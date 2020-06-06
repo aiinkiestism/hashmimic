@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
-export class CategoryComponent implements OnInit, OnDestroy {
+export class CategoryComponent implements OnInit {
 
   catePosts: Entry<any>[] = [];
   categories: Entry<any>[] = [];
@@ -25,15 +25,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
     private contentfulService: ContentfulService,
     public changeDetectorRef: ChangeDetectorRef
   ) {
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
-      return false;
-    };
 
-    this.mySubscription = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.router.navigated = false;
-      }
-    })
   }
 
   ngOnInit(): void {
@@ -55,14 +47,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
       this.showCatePosts();
     });
 
-    this.redraw();
+    this.showCatePosts();
 
-  }
-
-  ngOnDestroy(): void {
-    if (this.mySubscription) {
-      this.mySubscription.unsubscribe();
-    }
   }
 
   goToPost(postId) {
@@ -76,7 +62,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   showDates(e: any): void {
     for(let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+      if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
         this.publishedAt[i].classList.add('fadein');
       }
@@ -85,7 +71,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   hideDates(e: any): void {
     for(let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+      if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');
         this.publishedAt[i].classList.add('fadeout');
       }
@@ -104,11 +90,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
     } catch(e) {
       console.log("This is not the category page.");
     }
-  }
-
-  redraw(): void {
-    this.changeDetectorRef.detectChanges();
-    this.showCatePosts();
   }
 
 }
