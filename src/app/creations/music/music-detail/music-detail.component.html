@@ -1,0 +1,38 @@
+<div *ngIf="post.fields" id="music-detail-wrap">
+  <div id="top-wrap">
+    <div class="bg-outer">
+      <div class="bg-inner">
+        <div class="img-wrap">
+          <img src="{{ post.fields.media.fields.file.url }}" alt="thumbnail">
+        </div>
+        <div class="bottom-wrap">
+          <h2 class="post-title">{{ post.fields.title }}</h2>
+          <p class="posted-at"><i>posted on {{ post.fields.postedAt }}</i></p>
+          <div class="post-categories-wrap">
+            <div *ngFor="let category of post.fields.category" class="post-categories">
+              <a (click)="goToMusicCategory(category.fields.slug)">
+                <p>{{ category.fields.name }}</p>
+              </a>
+            </div>
+          </div>
+          <div class="share-wrap">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="middle-wrap">
+    <div class="bg-outer">
+      <div id="post-body" [innerHTML]="post.fields.body | mdToHtml">
+        <!-- {{ post.fields.body | mdToHtml }} -->
+      </div>
+      <div class="share-wrap">
+
+      </div>
+    </div>
+  </div>
+  <div id="bottom-wrap">
+
+  </div>
+</div>

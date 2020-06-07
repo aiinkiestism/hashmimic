@@ -1,1 +1,28 @@
-<p>business works!</p>
+<div id="business-wrap">
+  <div *ngFor="let post of businessPosts" class="bg-outer" (mouseenter)="showDates($event)" (mouseleave)="hideDates($event)">
+    <div class="business-post-wrap">
+      <div class="bg-inner">
+        <div (click)="goToDetail(post.fields.slug)" class="bg-inner-inner">
+          <div class="post-img-wrap">
+            <a (click)="goToDetail(post.fields.slug)">
+              <img src="{{ post.fields.media.fields.file.url }}" alt="thumbnail" width="196">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <p class="dates"><i>{{ post.fields.dates }}</i></p> -->
+      <div class="business-post-bottom">
+        <a (click)="goToDetail(post.fields.slug)" class="business-post-title">
+          <h3>{{ post.fields.title }}</h3>
+        </a>
+        <br>
+        <div *ngFor="let category of post.fields.category" class="business-post-categories">
+          <a (click)="goToBusinessCategory(category.fields.slug)" class="business-cate-link">
+            <p>{{ category.fields.name }}</p>
+          </a>
+        </div>
+        <!-- <p>{{ post.fields.description }}</p> -->
+      </div>
+    </div>
+  </div>
+</div>

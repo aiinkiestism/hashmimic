@@ -1,4 +1,4 @@
-#business-wrap {
+#music-category-wrap {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -7,10 +7,10 @@
     background: rgba(31,86,251,.2);
     width: 28.3%;
     margin-bottom: 3%;
-    .business-post-wrap {
+    .category-post-wrap {
       position: relative;
       .bg-inner {
-        background: url("./../../../assets/box-bg.svg") center no-repeat;
+        background: url("./../../../../assets/box-bg.svg") center no-repeat;
         padding: 30% 0 3%;
         .bg-inner-inner {
           background: rgba(31,86,251,.2);
@@ -32,7 +32,7 @@
           }
         }
       }
-      .dates {
+      .published-at {
         position: absolute;
         top: 3px;
         right: -10%;
@@ -43,9 +43,9 @@
 
         }
       }
-      .business-post-bottom {
+      .category-post-bottom {
         padding: 1% 8%;
-        .business-post-title {
+        .category-post-title {
           margin-left: 10px;
           cursor: pointer;
           h3 {
@@ -55,7 +55,7 @@
             font-size: 25px;
           }
         }
-        .business-post-categories {
+        .all-category-post-categories, .category-post-categories {
           display: inline-block;
           margin: 3% 0;
           margin-right: 7px;
@@ -67,6 +67,7 @@
               padding: 3px 10px;
               border-radius: 5px;
               font-weight: bold;
+              color: #fff;
             }
           }
         }
@@ -76,9 +77,9 @@
 }
 
 @media (max-width: 1500px) {
-  #business-wrap {
+  #music-category-wrap {
     .bg-outer {
-      .business-post-wrap {
+      .category-post-wrap {
         .bg-inner {
           .bg-inner-inner {
             .post-img-wrap {
@@ -96,7 +97,7 @@
 }
 
 @media (max-width: 1350px) {
-  #business-wrap {
+  #music-category-wrap {
     margin: -5% 8% auto;
   }
 }
@@ -106,11 +107,11 @@
 }
 
 @media (max-width: 1000px) {
-  #business-wrap {
+  #music-category-wrap {
     margin: -5% 8% auto;
     .bg-outer {
       width: 47.6%;
-      .business-post-wrap {
+      .category-post-wrap {
         .bg-inner {
           .bg-inner-inner {
             .post-img-wrap {
@@ -132,7 +133,7 @@
 }
 
 @media (max-width: 950px) {
-  #business-wrap {
+  #music-category-wrap {
     margin: -5% 8% auto;
     .bg-outer {
       width: 42.6%;
@@ -141,11 +142,11 @@
 }
 
 @media (max-width: 800px) {
-  #business-wrap {
+  #music-category-wrap {
     margin: -5% 8% auto;
     .bg-outer {
       width: 33.6%;
-      .business-post-wrap {
+      .category-post-wrap {
         .bg-inner {
           .bg-inner-inner {
             .post-img-wrap {
@@ -163,12 +164,12 @@
 }
 
 @media (max-width: 767.98px) {
-  #business-wrap {
+  #music-category-wrap {
     margin: 3% 4% auto;
     .bg-outer {
       width: 92%;
       margin-bottom: 10%;
-      .business-post-wrap {
+      .category-post-wrap {
         .bg-inner {
           .bg-inner-inner {
             .post-img-wrap {
@@ -180,7 +181,7 @@
             }
           }
         }
-        .dates {
+        .published-at {
           display: none;
         }
       }

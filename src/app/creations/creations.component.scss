@@ -1,7 +1,7 @@
 #creations-wrap {
-  margin-top: -5%;
+  margin-top: -10%;
   padding: 0 23%;
-  padding-bottom: 4%;
+  // padding-bottom: 4%;
   position: relative;
   z-index: 1500;
   .inner-wrap {
@@ -71,15 +71,14 @@
 
 @media (max-width: 1400px) {
   #creations-wrap {
-    padding-bottom: 40%;
+    // padding-bottom: 40%;
   }
 }
 
 @media (max-width: 1199.98px) {
   #creations-wrap {
-    padding: 0 15% 4%;
-    padding-top: 10%;
-    padding-bottom: 52%;
+    // padding: 10% 15% 52%;
+    padding: 3% 15% 0;
   }
 }
 
@@ -99,9 +98,7 @@
 
 @media (max-width: 575.98px) {
   #creations-wrap {
-    padding: 0 7% 4%;
-    padding-bottom: 52%;
-    padding-top: 10%;
+    padding: 10% 7% 0;
     .inner-wrap {
       // justify-content: space-evenly;
       %wrap-shared {

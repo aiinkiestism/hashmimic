@@ -50,6 +50,12 @@ import { BlogComponent } from './creations/blog/blog.component';
 import { PostComponent } from './creations/blog/post/post.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { CategoryComponent } from './creations/blog/category/category.component';
+import { MusicCategoryComponent } from './creations/music/music-category/music-category.component';
+import { MusicDetailComponent } from './creations/music/music-detail/music-detail.component';
+import { SoftwareCategoryComponent } from './creations/software/software-category/software-category.component';
+import { SoftwareDetailComponent } from './creations/software/software-detail/software-detail.component';
+import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
+import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +75,12 @@ import { CategoryComponent } from './creations/blog/category/category.component'
     PostComponent,
     MdToHtmlPipe,
     CategoryComponent,
+    MusicCategoryComponent,
+    MusicDetailComponent,
+    SoftwareCategoryComponent,
+    SoftwareDetailComponent,
+    BusinessDetailComponent,
+    BusinessCategoryComponent,
   ],
   entryComponents: [
     LoadingComponent,

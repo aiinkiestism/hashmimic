@@ -1,0 +1,37 @@
+<div id="music-category-wrap">
+  <div *ngFor="let post of posts" class="bg-outer" (mouseenter)="showDates($event)" (mouseleave)="hideDates($event)">
+    <div *ngFor="let category of post.fields.category" class="no-category">
+      <div *ngIf="category.fields.slug === pubCategoryId">
+        <div class="category-post-wrap">
+          <div class="bg-inner">
+            <div (click)="goToDetail(post.fields.slug)" class="bg-inner-inner">
+              <div class="post-img-wrap">
+                <a (click)="goToDetail(post.fields.slug)">
+                  <img src="{{ post.fields.media.fields.file.url }}" alt="thumbnail" width="196">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="posted-at"><i>{{ post.fields.postedAt }}</i></p>
+          <div class="category-post-bottom">
+            <a (click)="goToDetail(post.fields.slug)" class="category-post-title">
+              <h3>{{ post.fields.title }}</h3>
+            </a>
+            <br>
+            <div class="all-category-post-categories">
+              <a [routerLink]="'/creations/music'">
+                <p>All</p>
+              </a>
+            </div>
+            <div class="category-post-categories">
+              <a (click)="goToMusicCategory(category.fields.slug)">
+                <p>{{ category.fields.name }}</p>
+              </a>
+            </div>
+            <!-- <p>{{ post.fields.description }}</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

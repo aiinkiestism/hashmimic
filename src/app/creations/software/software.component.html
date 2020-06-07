@@ -1,1 +1,28 @@
-<p>software works!</p>
+<div id="software-wrap">
+  <div *ngFor="let post of softwarePosts" class="bg-outer" (mouseenter)="showDates($event)" (mouseleave)="hideDates($event)">
+    <div class="software-post-wrap">
+      <div class="bg-inner">
+        <div (click)="goToDetail(post.fields.slug)" class="bg-inner-inner">
+          <div class="post-img-wrap">
+            <a (click)="goToDetail(post.fields.slug)">
+              <img src="{{ post.fields.media.fields.file.url }}" alt="thumbnail" width="196">
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="published-at"><i>{{ post.fields.publishedAt }}</i></p>
+      <div class="software-post-bottom">
+        <a (click)="goToDetail(post.fields.slug)" class="software-post-title">
+          <h3>{{ post.fields.title }}</h3>
+        </a>
+        <br>
+        <div *ngFor="let category of post.fields.category" class="software-post-categories">
+          <a (click)="goToSoftwareCategory(category.fields.slug)" class="software-cate-link">
+            <p>{{ category.fields.name }}</p>
+          </a>
+        </div>
+        <!-- <p>{{ post.fields.description }}</p> -->
+      </div>
+    </div>
+  </div>
+</div>

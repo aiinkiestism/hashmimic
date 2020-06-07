@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { ContentfulService } from '../../contentful.service';
+import { Entry } from 'contentful';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-business',
@@ -7,9 +11,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessComponent implements OnInit {
 
-  constructor() { }
+  businessPosts: Entry<any>[] = [];
+  businessCategories: Entry<any>[] = [];
+  dates = document.getElementsByClassName("dates");
+
+  constructor(
+    private router: Router,
+    private contentfulService: ContentfulService
+  ) { }
 
   ngOnInit(): void {
+    this.contentfulService.getBusinessPosts()
+      .then(businessPosts => this.businessPosts = businessPosts);
+
+    this.contentfulService.getBusinessCategories()
+      .then(businessCategories => this.businessCategories = businessCategories);
+  }
+
+  goToDetail(postId) {
+    this.router.navigate(['/creations/business/detail', postId]);
+  }
+
+  goToBusinessCategory(categoryId) {
+    this.router.navigate(['/creations/business/category', categoryId]);
+  }
+
+  showDates(e: any): void {
+    for(let i = 0, max = this.dates.length; i < max; i++) {
+      if(this.dates[i].parentNode.parentNode === e.target) {
+        this.dates[i].classList.remove('fadeout');
+        this.dates[i].classList.add('fadein');
+      }
+    }
+  }
+
+  hideDates(e: any): void {
+    for(let i = 0, max = this.dates.length; i < max; i++) {
+      if(this.dates[i].parentNode.parentNode === e.target) {
+        this.dates[i].classList.remove('fadein');
+        this.dates[i].classList.add('fadeout');
+      }
+    }
   }
 
 }

@@ -28,10 +28,6 @@ export class BlogComponent implements OnInit {
       .then(categories => this.categories = categories);
   }
 
-  // goToPost(slug: any) {
-  //   this.router.navigate(['/creations/blog/post', slug]);
-  // }
-
   goToPost(postId) {
     this.router.navigate(['/creations/blog/post', postId]);
   }
