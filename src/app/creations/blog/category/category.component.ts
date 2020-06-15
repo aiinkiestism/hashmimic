@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd, NavigationStart } from '@angular/router';
 import { ContentfulService } from '../../../contentful.service';
 import { Entry } from 'contentful';

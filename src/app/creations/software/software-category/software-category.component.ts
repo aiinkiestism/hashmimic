@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd, NavigationStart } from '@angular/router';
 import { ContentfulService } from '../../../contentful.service';
 import { Entry } from 'contentful';
@@ -43,11 +43,9 @@ export class SoftwareCategoryComponent implements OnInit {
     this.contentfulService.getSoftwareCategories()
       .then(categories => this.categories = categories);
 
-    window.addEventListener("load", () => {
+    window.addEventListener("load", (): void => {
       this.showCatePosts();
     });
-
-    this.showCatePosts();
 
   }
 
@@ -61,7 +59,7 @@ export class SoftwareCategoryComponent implements OnInit {
   }
 
   showDates(e: any): void {
-    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+    for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
         this.publishedAt[i].classList.add('fadein');
@@ -70,7 +68,7 @@ export class SoftwareCategoryComponent implements OnInit {
   }
 
   hideDates(e: any): void {
-    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+    for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');
         this.publishedAt[i].classList.add('fadeout');
@@ -80,7 +78,8 @@ export class SoftwareCategoryComponent implements OnInit {
 
   showCatePosts(): void {
     try {
-      for(let i = 0, max = this.bgOuter.length; i < max; i++) {
+      for (let i = 0, max = this.bgOuter.length; i < max; i++) {
+        console.log(this.bgOuter[i].lastElementChild.lastElementChild);
         if(this.bgOuter[i].lastElementChild.lastElementChild === null) {
           this.bgOuter[i].setAttribute('style', "display: none;");
         } else {

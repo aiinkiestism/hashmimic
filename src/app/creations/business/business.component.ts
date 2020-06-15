@@ -34,10 +34,26 @@ export class BusinessComponent implements OnInit {
 
   goToBusinessCategory(categoryId) {
     this.router.navigate(['/creations/business/category', categoryId]);
+
+    setTimeout((): void => {
+      try {
+        let bgOuter = document.getElementsByClassName("bg-outer");
+        for (let i = 0, max = bgOuter.length; i < max; i++) {
+          console.log(bgOuter[i].lastElementChild.lastElementChild);
+          if(bgOuter[i].lastElementChild.lastElementChild === null) {
+            bgOuter[i].setAttribute('style', "display: none;");
+          } else {
+            continue;
+          }
+        }
+      } catch(e) {
+        console.log("This is not the category page.");
+      }
+    }, 100);
   }
 
   showDates(e: any): void {
-    for(let i = 0, max = this.dates.length; i < max; i++) {
+    for (let i = 0, max = this.dates.length; i < max; i++) {
       if(this.dates[i].parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadeout');
         this.dates[i].classList.add('fadein');
@@ -46,7 +62,7 @@ export class BusinessComponent implements OnInit {
   }
 
   hideDates(e: any): void {
-    for(let i = 0, max = this.dates.length; i < max; i++) {
+    for (let i = 0, max = this.dates.length; i < max; i++) {
       if(this.dates[i].parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadein');
         this.dates[i].classList.add('fadeout');

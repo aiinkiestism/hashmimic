@@ -17,7 +17,7 @@ export class SoftwareComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private contentfulService: ContentfulService
+    private contentfulService: ContentfulService,
   ) { }
 
   ngOnInit(): void {
@@ -34,10 +34,27 @@ export class SoftwareComponent implements OnInit {
 
   goToSoftwareCategory(categoryId) {
     this.router.navigate(['/creations/software/category', categoryId]);
+
+    setTimeout((): void => {
+      try {
+        let bgOuter = document.getElementsByClassName("bg-outer");
+        for (let i = 0, max = bgOuter.length; i < max; i++) {
+          console.log(bgOuter[i].lastElementChild.lastElementChild);
+          if(bgOuter[i].lastElementChild.lastElementChild === null) {
+            bgOuter[i].setAttribute('style', "display: none;");
+          } else {
+            continue;
+          }
+        }
+      } catch(e) {
+        console.log("This is not the category page.");
+      }
+    }, 100);
+
   }
 
   showDates(e: any): void {
-    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+    for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
         this.publishedAt[i].classList.add('fadein');
@@ -46,7 +63,7 @@ export class SoftwareComponent implements OnInit {
   }
 
   hideDates(e: any): void {
-    for(let i = 0, max = this.publishedAt.length; i < max; i++) {
+    for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');
         this.publishedAt[i].classList.add('fadeout');
