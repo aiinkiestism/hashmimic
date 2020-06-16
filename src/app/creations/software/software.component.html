@@ -1,5 +1,5 @@
 <div id="software-wrap">
-  <div *ngFor="let post of softwarePosts" class="bg-outer" (mouseenter)="showDates($event)" (mouseleave)="hideDates($event)">
+  <div *ngFor="let post of softwarePosts" class="bg-outer" (mouseenter)="onHover($event)" (mouseleave)="offHover($event)">
     <div class="software-post-wrap">
       <div class="bg-inner">
         <div (click)="goToDetail(post.fields.slug)" class="bg-inner-inner">

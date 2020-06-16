@@ -12,6 +12,11 @@
       width: 40%;
       text-align: center;
       height: 190px;
+      &:hover {
+        transform: scale(1.1);
+        transition-timing-function: ease-out;
+        transition-duration: .8s;
+      }
       .wrap-box {
         width: 100%;
         height: 100%;

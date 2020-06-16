@@ -1,5 +1,5 @@
 <div id="category-wrap">
-  <div *ngFor="let post of catePosts" class="bg-outer" (mouseenter)="showDates($event)" (mouseleave)="hideDates($event)">
+  <div *ngFor="let post of catePosts" class="bg-outer" (mouseenter)="onHover($event)" (mouseleave)="offHover($event)">
     <div *ngFor="let category of post.fields.category" class="no-category">
       <div *ngIf="category.fields.slug === pubCategoryId">
         <div class="category-post-wrap">

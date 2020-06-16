@@ -49,10 +49,10 @@ export class BlogComponent implements OnInit {
       } catch(e) {
         console.log("This is not the category page.");
       }
-    }, 100);
+    }, 200);
   }
 
-  showDates(e: any): void {
+  onHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
@@ -61,7 +61,7 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  hideDates(e: any): void {
+  offHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
       if(this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');

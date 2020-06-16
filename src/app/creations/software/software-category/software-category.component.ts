@@ -58,18 +58,18 @@ export class SoftwareCategoryComponent implements OnInit {
     this.showCatePosts();
   }
 
-  showDates(e: any): void {
+  onHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
+      if (this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
         this.publishedAt[i].classList.add('fadein');
       }
     }
   }
 
-  hideDates(e: any): void {
+  offHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
+      if (this.publishedAt[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');
         this.publishedAt[i].classList.add('fadeout');
       }

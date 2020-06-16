@@ -60,18 +60,18 @@ export class BusinessCategoryComponent implements OnInit {
     this.showCatePosts();
   }
 
-  showDates(e: any): void {
-    for(let i = 0, max = this.dates.length; i < max; i++) {
-      if(this.dates[i].parentNode.parentNode.parentNode.parentNode === e.target) {
+  onHover(e: any): void {
+    for (let i = 0, max = this.dates.length; i < max; i++) {
+      if (this.dates[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadeout');
         this.dates[i].classList.add('fadein');
       }
     }
   }
 
-  hideDates(e: any): void {
-    for(let i = 0, max = this.dates.length; i < max; i++) {
-      if(this.dates[i].parentNode.parentNode.parentNode.parentNode === e.target) {
+  offHover(e: any): void {
+    for (let i = 0, max = this.dates.length; i < max; i++) {
+      if (this.dates[i].parentNode.parentNode.parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadein');
         this.dates[i].classList.add('fadeout');
       }
@@ -80,8 +80,8 @@ export class BusinessCategoryComponent implements OnInit {
 
   showCatePosts(): void {
     try {
-      for(let i = 0, max = this.bgOuter.length; i < max; i++) {
-        if(this.bgOuter[i].lastElementChild.lastElementChild === null) {
+      for (let i = 0, max = this.bgOuter.length; i < max; i++) {
+        if (this.bgOuter[i].lastElementChild.lastElementChild === null) {
           this.bgOuter[i].setAttribute('style', "display: none;");
         } else {
           continue;

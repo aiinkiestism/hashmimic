@@ -49,10 +49,10 @@ export class BusinessComponent implements OnInit {
       } catch(e) {
         console.log("This is not the category page.");
       }
-    }, 100);
+    }, 200);
   }
 
-  showDates(e: any): void {
+  onHover(e: any): void {
     for (let i = 0, max = this.dates.length; i < max; i++) {
       if(this.dates[i].parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadeout');
@@ -61,7 +61,7 @@ export class BusinessComponent implements OnInit {
     }
   }
 
-  hideDates(e: any): void {
+  offHover(e: any): void {
     for (let i = 0, max = this.dates.length; i < max; i++) {
       if(this.dates[i].parentNode.parentNode === e.target) {
         this.dates[i].classList.remove('fadein');

@@ -49,22 +49,22 @@ export class SoftwareComponent implements OnInit {
       } catch(e) {
         console.log("This is not the category page.");
       }
-    }, 100);
+    }, 200);
 
   }
 
-  showDates(e: any): void {
+  onHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+      if (this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadeout');
         this.publishedAt[i].classList.add('fadein');
       }
     }
   }
 
-  hideDates(e: any): void {
+  offHover(e: any): void {
     for (let i = 0, max = this.publishedAt.length; i < max; i++) {
-      if(this.publishedAt[i].parentNode.parentNode === e.target) {
+      if (this.publishedAt[i].parentNode.parentNode === e.target) {
         this.publishedAt[i].classList.remove('fadein');
         this.publishedAt[i].classList.add('fadeout');
       }
