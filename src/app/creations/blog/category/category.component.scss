@@ -193,7 +193,8 @@
           }
         }
         .published-at {
-          display: none;
+          opacity: 1;
+          visibility: visible;
         }
       }
     }
