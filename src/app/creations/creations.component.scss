@@ -83,7 +83,8 @@
 @media (max-width: 1199.98px) {
   #creations-wrap {
     // padding: 10% 15% 52%;
-    padding: 3% 15% 0;
+    // padding: 3% 15% 0;
+    padding: 10% 15% 0;
   }
 }
 
@@ -97,13 +98,19 @@
 
 }
 
+@media (max-width: 900px) {
+  #creations-wrap {
+    padding: 11% 15% 0;
+  }
+}
+
 @media (max-width: 767.98px) {
 
 }
 
 @media (max-width: 575.98px) {
   #creations-wrap {
-    padding: 10% 7% 0;
+    padding: 23% 7% 0;
     .inner-wrap {
       // justify-content: space-evenly;
       %wrap-shared {
