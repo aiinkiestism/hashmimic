@@ -25,7 +25,7 @@
         <a mat-button [routerLink]="'/creations'" id="creations-gnav">
           <span>Creations</span>
         </a>
-        <a mat-button id="me-gnav" (mouseenter)="onMe()" (mouseleave)="offMe()">
+        <a mat-button [routerLink]="'/me'" id="me-gnav" (mouseenter)="onMe()" (mouseleave)="offMe()">
           <span>Me</span>
         </a>
         <div id="me-toggle">

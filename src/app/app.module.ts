@@ -56,6 +56,7 @@ import { SoftwareCategoryComponent } from './creations/software/software-categor
 import { SoftwareDetailComponent } from './creations/software/software-detail/software-detail.component';
 import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
 import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
+import { MeComponent } from './me/me.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { BusinessCategoryComponent } from './creations/business/business-categor
     SoftwareDetailComponent,
     BusinessDetailComponent,
     BusinessCategoryComponent,
+    MeComponent,
   ],
   entryComponents: [
     LoadingComponent,
