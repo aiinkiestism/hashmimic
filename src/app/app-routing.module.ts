@@ -15,12 +15,16 @@ import { SoftwareCategoryComponent } from './creations/software/software-categor
 import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
 import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
 import { MeComponent } from './me/me.component';
+import { ForClientsComponent } from './for-clients/for-clients.component';
+import { ForRecruitersComponent } from './for-recruiters/for-recruiters.component';
 // import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'me', component: MeComponent },
+  { path: 'for-clients', component: ForClientsComponent },
+  { path: 'for-recruiters', component: ForRecruitersComponent },
   { path: 'creations', component: CreationsComponent },
   { path: 'creations/blog', component: BlogComponent },
   { path: 'creations/blog/post/:id', component: PostComponent },

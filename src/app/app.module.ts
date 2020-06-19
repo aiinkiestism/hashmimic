@@ -57,6 +57,8 @@ import { SoftwareDetailComponent } from './creations/software/software-detail/so
 import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
 import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
 import { MeComponent } from './me/me.component';
+import { ForClientsComponent } from './for-clients/for-clients.component';
+import { ForRecruitersComponent } from './for-recruiters/for-recruiters.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { MeComponent } from './me/me.component';
     BusinessDetailComponent,
     BusinessCategoryComponent,
     MeComponent,
+    ForClientsComponent,
+    ForRecruitersComponent,
   ],
   entryComponents: [
     LoadingComponent,
