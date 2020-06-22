@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 // import { ComponentPortal } from '@angular/cdk/portal';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { Observable } from 'rxjs';
+import { routingAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    routingAnimation
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'Hashmimic.com';
@@ -82,6 +86,10 @@ export class AppComponent implements OnInit {
       }, 1200);
 
     }
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
   }
 
 }
