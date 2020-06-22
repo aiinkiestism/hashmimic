@@ -15,16 +15,20 @@ import { SoftwareCategoryComponent } from './creations/software/software-categor
 import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
 import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
 import { MeComponent } from './me/me.component';
-import { ForClientsComponent } from './for-clients/for-clients.component';
-import { ForRecruitersComponent } from './for-recruiters/for-recruiters.component';
+import { ForClientsComponent } from './me/for-clients/for-clients.component';
+import { ForJaClientsComponent } from './me/for-ja-clients/for-ja-clients.component';
+import { ForRecruitersComponent } from './me/for-recruiters/for-recruiters.component';
+import { ForJaRecruitersComponent } from './me/for-ja-recruiters/for-ja-recruiters.component';
 // import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'me', component: MeComponent },
-  { path: 'for-clients', component: ForClientsComponent },
-  { path: 'for-recruiters', component: ForRecruitersComponent },
+  { path: 'me/for-clients', component: ForClientsComponent },
+  { path: 'me/for-ja-clients', component: ForJaClientsComponent },
+  { path: 'me/for-recruiters', component: ForRecruitersComponent },
+  { path: 'me/for-ja-recruiters', component: ForJaRecruitersComponent },
   { path: 'creations', component: CreationsComponent },
   { path: 'creations/blog', component: BlogComponent },
   { path: 'creations/blog/post/:id', component: PostComponent },
