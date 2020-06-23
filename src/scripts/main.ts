@@ -1,6 +1,6 @@
 'use strict';
 import { typedTitle } from './objects2D/typed-title';
-import { intro } from './objects3D/intro';
+import { webglObjects } from './objects3D/main';
 import { replacedCursor } from './objects2D/replaced-cursor';
 
 
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //   let currentPathname = location.pathname;
   //   if (currentPathname !== '/') {
   //     homeGnav.addEventListener("click", () => {
-  //       intro();
+  //       webglObjects();
   //       typedTitle();
   //     });
   //   }
@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentPathname = location.pathname;
     if (currentPathname !== '/') {
       logoGnav.addEventListener("click", () => {
-        intro();
+        webglObjects();
         typedTitle();
       });
     }
@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 try {
-  window.addEventListener("DOMContentLoaded", intro);
+  window.addEventListener("DOMContentLoaded", webglObjects);
 } catch(e) {
   console.log("This is not the top page.");
 }
