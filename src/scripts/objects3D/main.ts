@@ -12,7 +12,7 @@ export function webglObjects() {
         scene,
         camera,
         homeRenderer,
-        icosahedron,
+        centerMesh,
         smokes,
         directionalLight,
         directionalLight2,
@@ -36,8 +36,8 @@ export function webglObjects() {
     homeRenderer.setPixelRatio(window.devicePixelRatio);
     homeRenderer.setSize(introWidth, introHeight);
 
-    icosahedron = introObj.icosahedron;
-    scene.add(icosahedron);
+    centerMesh = introObj.centerMesh;
+    scene.add(centerMesh);
     smokes = smokesObj.smokeParticles;
     for (let i: number = 0, max = smokes.length; i < smokes.length; i++) {
         // console.log(smokes[i]);
@@ -74,9 +74,9 @@ export function webglObjects() {
     homeAnimate();
 
     function homeAnimate() {
-        icosahedron.rotation.x += 0.033;
-        icosahedron.rotation.y -= 0.025;
-        icosahedron.rotation.z -= -0.01;
+        centerMesh.rotation.x += 0.033;
+        centerMesh.rotation.y -= 0.025;
+        centerMesh.rotation.z -= -0.01;
 
         rot += 0.3;
         const radian = (rot * Math.PI) / 180;

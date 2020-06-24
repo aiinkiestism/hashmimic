@@ -11,6 +11,6 @@ export default function intro() {
       map: texture,
       // transparent: true,
   });
-  this.icosahedron = new THREE.Mesh(geometry, material);
+  this.centerMesh = new THREE.Mesh(geometry, material);
 
 }

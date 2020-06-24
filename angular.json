@@ -59,8 +59,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "90kb",
+                  "maximumError": "100kb"
                 }
               ],
               "serviceWorker": true,
@@ -137,8 +137,15 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/hashmimic/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "externalDependencies": [
+              "@nestjs/microservices",
+              "@nestjs/microservices/microservices-module",
+              "@nestjs/websockets",
+              "@nestjs/websockets/socket-module",
+              "cache-manager"
+            ]
           },
           "configurations": {
             "production": {
@@ -150,7 +157,7 @@
                 }
               ],
               "sourceMap": false,
-              "optimization": true
+              "optimization": false
             }
           }
         },
@@ -166,6 +173,32 @@
               "browserTarget": "hashmimic:build:production",
               "serverTarget": "hashmimic:server:production"
             }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "hashmimic:build",
+            "serverTarget": "hashmimic:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hashmimic:build:production",
+              "serverTarget": "hashmimic:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "hashmimic:build:production",
+            "serverTarget": "hashmimic:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
