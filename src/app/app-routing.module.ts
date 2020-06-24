@@ -19,6 +19,7 @@ import { ForClientsComponent } from './me/for-clients/for-clients.component';
 import { ForJaClientsComponent } from './me/for-ja-clients/for-ja-clients.component';
 import { ForRecruitersComponent } from './me/for-recruiters/for-recruiters.component';
 import { ForJaRecruitersComponent } from './me/for-ja-recruiters/for-ja-recruiters.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 // import { CalligraphyComponent } from './creations/calligraphy/calligraphy.component';
 
 
@@ -231,6 +232,24 @@ const routes: Routes = [
       twittersite: '@hashmimic',
   }},
   // { path: 'creations/calligraphy', component: CalligraphyComponent },
+  { path: '404', component: NotFoundComponent,
+    data: {
+      title: '404 Not Found',
+      description: "404 Page in Hashmimic.com",
+      url: 'https://hashmimic.com/404',
+      image: 'https://hashmimic.com/assets/logo.png',
+      twittercard: 'summary',
+      twittersite: '@hashmimic',
+  }},
+  { path: '**', redirectTo: '/404', pathMatch: 'full',
+    data: {
+      title: '404 Not Found',
+      description: "404 Page in Hashmimic.com",
+      url: 'https://hashmimic.com/404',
+      image: 'https://hashmimic.com/assets/logo.png',
+      twittercard: 'summary',
+      twittersite: '@hashmimic',
+  }},
 ];
 
 @NgModule({

@@ -65,6 +65,7 @@ import localeJa from '@angular/common/locales/ja';
 import localeJaExtra from '@angular/common/locales/extra/ja';
 import { ForJaClientsComponent } from './me/for-ja-clients/for-ja-clients.component';
 import { ForJaRecruitersComponent } from './me/for-ja-recruiters/for-ja-recruiters.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 registerLocaleData(localeJa, 'ja', localeJaExtra);
 
@@ -97,6 +98,7 @@ registerLocaleData(localeJa, 'ja', localeJaExtra);
     ForRecruitersComponent,
     ForJaClientsComponent,
     ForJaRecruitersComponent,
+    NotFoundComponent,
   ],
   entryComponents: [
     LoadingComponent,

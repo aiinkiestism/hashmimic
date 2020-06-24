@@ -1,11 +1,13 @@
 import * as THREE from 'three';
-import intro from './intro';
-import smokes from './smokes';
+import { OrbitControls } from './OrbitControls';
+import intro from './components/intro';
+import smokes from './components/smokes';
 
 let introObj = new intro(),
     smokesObj = new smokes();
+    // oc = new OrbitControls();
 
-export function webglObjects() {
+export function homeWebgl() {
     let introWidth = window.innerWidth,
         introHeight = window.innerHeight,
         rot = 0,
@@ -27,7 +29,7 @@ export function webglObjects() {
     scene.background = new THREE.Color(0x000);
     camera = new THREE.PerspectiveCamera(30, introWidth/introHeight, 0.1, 1000);
     camera.position.set(27, 60, 500);
-    // let controls = new THREE.OrbitControls(camera);
+    // let controls = new oc(camera);
     // controls.autoRotate = true;
 
     homeRenderer = new THREE.WebGLRenderer({
@@ -85,6 +87,7 @@ export function webglObjects() {
         camera.position.y = 520 * Math.sin(radian);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
 
+        // controls.update();
         homeRenderer.render(scene, camera);
         requestAnimationFrame(homeAnimate);
     }
