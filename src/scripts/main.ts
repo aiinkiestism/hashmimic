@@ -32,6 +32,16 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("This is not the top page.");
   }
 
+  try {
+    let notFoundToHome = document.getElementById("not-found-to-home");
+    notFoundToHome.addEventListener("click", () => {
+      homeWebgl();
+      typedTitle();
+    });
+  } catch(e) {
+    console.log("This is not the 404 page.");
+  }
+
 });
 
 try {

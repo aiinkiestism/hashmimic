@@ -1,2 +1,14 @@
 <div id="404-wrap"></div>
-<p>If somethings wrong occured, please contact <a [routerLink]="'/me'">me</a></p>
+<div id="not-found-wrap">
+    <h3 id="not-found-title">404</h3>
+    <div id="bottom-text">
+        <a [routerLink]="'/'" id="not-found-to-home">
+            <p>Back to Home</p>
+        </a>
+        <div id="stake"></div>
+        <a onclick="javascript:window.history.back(-1);return false;">
+            <p>Previous Page</p>
+        </a>
+        <p>If something wrong occured, please contact <a [routerLink]="'/me'"><p>me</p></a>.</p>
+    </div>
+</div>
