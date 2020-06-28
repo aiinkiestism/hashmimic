@@ -184,5 +184,11 @@
 }
 
 @media (max-width: 575.98px) {
-    
+    #for-clients-wrap {
+        margin: 0 5.5% 0;
+        padding-top: 26%;
+        %text-font-style {
+            line-height: 1.7;
+        }
+    }
 }
