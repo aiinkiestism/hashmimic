@@ -1,0 +1,188 @@
+#for-clients-wrap {
+    text-align: center;
+    margin: -21% 20.5% 0;
+    padding-top: 14%;
+    %title-font-style {
+        color: #171414;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin: 0 0 5%;
+        font-size: 35px;
+    }
+    %text-font-style {
+        color: #171414;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin: 0 0 5%;
+        font-size: 24px;
+        line-height: 2;
+    }
+    %red-wrap {
+        background-color: rgba(255, 0, 123, .4);
+        padding: 5% 3%;
+        margin: 0 auto 6.5%;
+        width: 92%;
+        box-shadow:
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+    }
+    %blue-wrap {
+        background-color: rgba(31, 86, 251, .2);
+        padding: 5% 3%;
+        margin: 0 auto 6.5%;
+        width: 92%;
+        box-shadow:
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+    }
+    #for-clients-intro {
+        // margin: 0 4% 6.5%;
+        background-color: rgba(31, 86, 251, .2);
+        padding: 5% 3%;
+        margin: 0 auto 6.5%;
+        width: 92%;
+        box-shadow:
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+        #fc-intro-title {
+            @extend %title-font-style;
+        }
+        #fc-intro-text {
+            @extend %text-font-style;
+        }
+    }
+    .inner-text {
+        @extend %text-font-style;
+    }
+    #fc-what-i-can {
+        @extend %red-wrap;
+        #fc-what-i-can-title {
+            @extend %title-font-style;
+        }
+        .inner-text {
+            text-align: left;
+            margin: 0 17% 5% 21%;
+        }
+    }
+    #fc-what-i-want-to {
+        @extend %red-wrap;
+        #fc-what-i-want-to-title {
+            @extend %title-font-style;
+        }
+    }
+    #other-wh {
+        @extend %red-wrap;
+        #when {
+            
+        }
+        #where {
+
+        }
+        #with-whom {
+
+        }
+    }
+    #fc-policy {
+        @extend %blue-wrap;
+        #fc-policy-title {
+            @extend %title-font-style;
+        }
+        .inner-text {
+            text-align: left;
+            margin: 0 19% 5% 24%;
+        }
+    }
+    #fc-proof {
+        @extend %blue-wrap;
+        #fc-proof-title {
+            @extend %title-font-style;
+        }
+        .inner-text {
+            line-height: 1.3;
+            text-align: left;
+            margin: 0 19% 5% 24%;
+            a {
+                p {
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);  
+                    }
+                    display: inline-block;
+                    // font-size: 35px;
+                    color: rgba(31, 86, 251, .9); 
+                }
+                #github-link {
+                    display: inline-block;
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);  
+                    }
+                    .sn-link-inner {
+                        display: inline-block;
+                        svg {
+                            vertical-align: middle;
+                            image {
+    
+                            }
+                        }
+                    }
+                    #github-link-text {
+                        &:hover {
+                            transform: none;
+                        }
+                        margin-left: 4px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    #conclu {
+        @extend %red-wrap;
+        .inner-text {
+            // line-height: 0;
+            line-height: 1.5;
+            a {
+                p {
+                    &:hover {
+                      cursor: pointer;
+                      transform: scale(1.1);  
+                    }
+                    display: inline-block;
+                    // font-size: 35px;
+                    color: rgba(31, 86, 251, .9);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) {
+    #for-clients-wrap {
+        #for-clients-intro {
+            #fc-intro-text {
+                margin: 0 7% 5%;
+            }
+        }
+        #fc-what-i-can, #fc-policy {
+            .inner-text {
+                margin: 0 8% 5% 13%;
+            }
+        }
+        #fc-proof {
+            .inner-text {
+                margin: 0 7% 5%;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    
+}

@@ -33,7 +33,7 @@ export class NotFoundComponent implements OnInit {
     this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
       .subscribe(() => {
-        // this.contents.setAttribute('style', "background: #000;");
+        this.contents.setAttribute('style', "background: #000; display: block; height: 100vh; overflow-y: scroll;");
         this.main.setAttribute('style', "margin-top: 21%;");
       });
       
@@ -45,7 +45,7 @@ export class NotFoundComponent implements OnInit {
     // console.log(notFoundWebgl);
     // notFoundWebgl();
     // console.log("404");
-    this.contents.setAttribute('style', "background: transparent;");
+    this.contents.setAttribute('style', "background: transparent; display: block; height: 100vh; overflow-y: scroll;");
     this.main.setAttribute('style', "margin-top: 0;");
   }
 
