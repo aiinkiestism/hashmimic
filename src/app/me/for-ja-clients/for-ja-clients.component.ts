@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -21,6 +21,14 @@ export class ForJaClientsComponent implements OnInit {
         this.contents.setAttribute('style', "background: #000; display: block; height: 100vh; overflow-y: scroll;");
         this.main.setAttribute('style', "background: #000; padding-bottom: 0px;");
       })
+
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        console.log('why scroll is failing..');
+        window.scroll(0, 0);
+        console.log('why scroll is failing..');
+      });
   }
 
   ngOnInit(): void {
