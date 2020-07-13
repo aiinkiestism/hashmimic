@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'me', component: MeComponent,
     data: {
       title: 'About Me',
-      description: "This is the page about me, hashmimic",
+      description: "This is a page about me, hashmimic",
       url: 'https://hashmimic.com/me',
       image: 'https://hashmimic.com/assets/logo.png',
       twittercard: 'summary',

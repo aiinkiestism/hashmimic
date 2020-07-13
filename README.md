@@ -1,4 +1,4 @@
-# Hashmimic.com
+# Hashmimic.com [![HitCount](http://hits.dwyl.com/aiinkiestism/hashmimic.svg)](http://hits.dwyl.com/aiinkiestism/hashmimic)
 This is my personal site gathering and summarizing my every identity,<br>
 with ng and esbuild used as build tools.<br>
 https://hashmimic.com

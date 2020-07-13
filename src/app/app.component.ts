@@ -111,10 +111,10 @@ export class AppComponent implements OnInit {
 
   updateMeta(title: string, desc: string, url: any, image: any, twittercard: any, twittersite: any) {
     this.titleService.setTitle(title);
-    this.meta.updateTag({ name: 'title', content: title });
-    this.meta.updateTag({ name: 'og:description', content: desc });
-    this.meta.updateTag({ name: 'og:url', content: url });
-    this.meta.updateTag({ name: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:image', content: image });
     this.meta.updateTag({ name: 'twitter:card', content: twittercard });
     this.meta.updateTag({ name: 'twitter:site', content: twittersite });
   }
