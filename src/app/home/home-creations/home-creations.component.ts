@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ItemData } from '../../data/item-data';
+import { ItemData } from '../../models/item-data';
 
 @Component({
   selector: 'app-home-creations',
