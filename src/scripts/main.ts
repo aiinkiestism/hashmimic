@@ -33,6 +33,32 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   try {
+      window.addEventListener("popstate", () => {
+        console.log("called")
+        let currentPathname = location.pathname;
+        if (currentPathname !== '/') {
+            homeWebgl();
+            typedTitle();
+        }
+      });
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
+
+  try {
+      window.addEventListener("pageshow", () => {
+        console.log("called")
+        let currentPathname = location.pathname;
+        if (currentPathname !== '/') {
+            homeWebgl();
+            typedTitle();
+        }
+      });
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
+
+  try {
     let notFoundToHome = document.getElementById("not-found-to-home");
     notFoundToHome.addEventListener("click", () => {
       homeWebgl();
