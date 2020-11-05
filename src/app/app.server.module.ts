@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,10 @@ const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
   imports: [
     AppModule,
     ServerModule,
-    RouterModule.forRoot(routes),
+    ServerTransferStateModule,
+    RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+}),
   ],
   bootstrap: [AppComponent],
   declarations: [AppShellComponent],

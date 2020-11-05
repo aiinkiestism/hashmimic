@@ -1,37 +1,77 @@
 'use strict';
 import { typedTitle } from './objects2D/typed-title';
-import { intro } from './objects3D/intro';
+import { homeWebgl } from './objects3D/home';
 import { replacedCursor } from './objects2D/replaced-cursor';
 
 
 window.addEventListener("DOMContentLoaded", () => {
   // let homeGnav = document.getElementById("home-gnav");
-  let logoGnav = document.getElementById("logo-gnav");
+  // let logoGnav = document.getElementById("logo-gnav");
 
   // homeGnav.addEventListener("mouseenter", () => {
   //   let currentPathname = location.pathname;
   //   if (currentPathname !== '/') {
   //     homeGnav.addEventListener("click", () => {
-  //       intro();
+  //       homeWebgl();
   //       typedTitle();
   //     });
   //   }
   // });
+  try {
+    let logoGnav = document.getElementById("logo-gnav");
+    logoGnav.addEventListener("mouseenter", () => {
+      let currentPathname = location.pathname;
+      if (currentPathname !== '/') {
+        logoGnav.addEventListener("click", () => {
+          homeWebgl();
+          typedTitle();
+        });
+      }
+    });
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
 
-  logoGnav.addEventListener("mouseenter", () => {
-    let currentPathname = location.pathname;
-    if (currentPathname !== '/') {
-      logoGnav.addEventListener("click", () => {
-        intro();
-        typedTitle();
+  try {
+      window.addEventListener("popstate", () => {
+        console.log("called")
+        let currentPathname = location.pathname;
+        if (currentPathname !== '/') {
+            homeWebgl();
+            typedTitle();
+        }
       });
-    }
-  });
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
+
+  try {
+      window.addEventListener("pageshow", () => {
+        console.log("called")
+        let currentPathname = location.pathname;
+        if (currentPathname !== '/') {
+            homeWebgl();
+            typedTitle();
+        }
+      });
+  } catch(e) {
+    console.log("This is not the top page.");
+  }
+
+  try {
+    let notFoundToHome = document.getElementById("not-found-to-home");
+    notFoundToHome.addEventListener("click", () => {
+      homeWebgl();
+      typedTitle();
+    });
+  } catch(e) {
+    console.log("This is not the 404 page.");
+  }
 
 });
 
 try {
-  window.addEventListener("DOMContentLoaded", intro);
+  window.addEventListener("DOMContentLoaded", homeWebgl);
 } catch(e) {
   console.log("This is not the top page.");
 }

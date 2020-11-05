@@ -57,8 +57,17 @@ import { SoftwareDetailComponent } from './creations/software/software-detail/so
 import { BusinessDetailComponent } from './creations/business/business-detail/business-detail.component';
 import { BusinessCategoryComponent } from './creations/business/business-category/business-category.component';
 import { MeComponent } from './me/me.component';
-import { ForClientsComponent } from './for-clients/for-clients.component';
-import { ForRecruitersComponent } from './for-recruiters/for-recruiters.component';
+import { ForClientsComponent } from './me/for-clients/for-clients.component';
+import { ForRecruitersComponent } from './me/for-recruiters/for-recruiters.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeJa from '@angular/common/locales/ja';
+import localeJaExtra from '@angular/common/locales/extra/ja';
+import { ForJaClientsComponent } from './me/for-ja-clients/for-ja-clients.component';
+import { ForJaRecruitersComponent } from './me/for-ja-recruiters/for-ja-recruiters.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+registerLocaleData(localeJa, 'ja', localeJaExtra);
 
 @NgModule({
   declarations: [
@@ -87,6 +96,9 @@ import { ForRecruitersComponent } from './for-recruiters/for-recruiters.componen
     MeComponent,
     ForClientsComponent,
     ForRecruitersComponent,
+    ForJaClientsComponent,
+    ForJaRecruitersComponent,
+    NotFoundComponent,
   ],
   entryComponents: [
     LoadingComponent,

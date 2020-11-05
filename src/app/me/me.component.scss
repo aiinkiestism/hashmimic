@@ -48,6 +48,9 @@
         width: 22.3%;
         margin-bottom: 3%;
         .sn-link-inner {
+          &:hover {
+            transform: scale(1.1);
+          }
           svg {
             image {
 
@@ -75,7 +78,14 @@
       }
       a {
         font-size: 20px;
-        color: rgba(31, 86, 251, 1);
+        // color: rgba(31, 86, 251, 1);
+        color: #789afb;
+        p {
+          display: inline-block;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
       }
     }
     #for-recruiters {
@@ -95,7 +105,14 @@
       }
       a {
         font-size: 20px;
-        color: rgba(31, 86, 251, 1);
+        // color: rgba(31, 86, 251, 1);
+        color: #789afb;
+        p {
+          display: inline-block;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
       }
     }
     #for-others {

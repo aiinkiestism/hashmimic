@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd, RouterOutlet } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 // import { ComponentPortal } from '@angular/cdk/portal';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { Observable } from 'rxjs';
+import { routingAnimation } from './animations';
+import { Title, Meta } from '@angular/platform-browser';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    routingAnimation
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'Hashmimic.com';
@@ -24,7 +30,10 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
-    // private overlay: Overlay
+    // private overlay: Overlay,
+    private route: ActivatedRoute,
+    private titleService: Title,
+    private meta: Meta,
   ) {
   }
 
@@ -39,6 +48,18 @@ export class AppComponent implements OnInit {
     // });
 
     // this.meToggle();
+
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.route),
+      map((route) => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      }),
+      filter((route) => route.outlet === 'primary'),
+      mergeMap((route) => route.data)).subscribe((event) => {
+        this.updateMeta(event['title'], event['description'], ['url'], ['image'], ['twittercard'], ['twittersite']);
+      });
 
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
@@ -82,6 +103,20 @@ export class AppComponent implements OnInit {
       }, 1200);
 
     }
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+  }
+
+  updateMeta(title: string, desc: string, url: any, image: any, twittercard: any, twittersite: any) {
+    this.titleService.setTitle(title);
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ name: 'twitter:card', content: twittercard });
+    this.meta.updateTag({ name: 'twitter:site', content: twittersite });
   }
 
 }

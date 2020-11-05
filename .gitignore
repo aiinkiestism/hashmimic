@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# environments files
+# environments/
+
 # dependencies
 /node_modules
 
@@ -44,3 +47,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#infra
+.firebase/
