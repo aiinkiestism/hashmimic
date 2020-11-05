@@ -20,7 +20,7 @@ export class MeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.main.setAttribute('style', "background: linear-gradient(#000 0%, #536AFC 35%, #FF007B 100%); padding-bottom: 1px;");
+    this.main.setAttribute('style', "background: linear-gradient(#000 0%, #536AFC 55%, #FF007B 100%); padding-bottom: 1px;");
   }
 
 }
