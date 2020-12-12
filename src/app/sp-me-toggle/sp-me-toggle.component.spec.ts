@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SpMeToggleComponent } from './sp-me-toggle.component';
 
@@ -6,7 +6,7 @@ describe('SpMeToggleComponent', () => {
   let component: SpMeToggleComponent;
   let fixture: ComponentFixture<SpMeToggleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SpMeToggleComponent ]
     })

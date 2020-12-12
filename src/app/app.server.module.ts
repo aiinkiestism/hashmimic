@@ -14,7 +14,8 @@ const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
     ServerModule,
     ServerTransferStateModule,
     RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
+    initialNavigation: 'enabled',
+    relativeLinkResolution: 'legacy'
 }),
   ],
   bootstrap: [AppComponent],
