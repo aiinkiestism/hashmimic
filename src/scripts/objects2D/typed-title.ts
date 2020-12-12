@@ -27,6 +27,8 @@ export function typedTitle() {
       // .delete(16, {delay: 1800})
       // .type("Product Manager.", {delay: 1100})
       // .delete(16, {delay: 1800})
+      // .type("Researcher.", {delay: 1100})
+      // .delete(11, {delay: 1800})
       // .type("Business Architect.", {delay: 1100})
       // .delete(25, {delay: 1800})
       .type("My Motivation in Life is to express what I create with time and effort, ", {delay: 1100})
